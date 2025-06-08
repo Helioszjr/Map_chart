@@ -1,0 +1,209 @@
+; MapChart example 6 - auto-QTLs
+
+; This example shows various options of graphs and auto-QTLs
+
+; QTL effects are shown here in 3 ways:
+; - the LOD-graphs of the QTLs
+; - the 1-LOD and 2-LOD QTL intervals (determined automatically from the graphs)
+; - the Locus texts are used to show the significance of the Kruskal-Wallis test
+;   of qualitative scores of the same trait
+
+; The graph data are read from the file Ex6Graphs.txt
+; From version 2.2 graphs for different linkage groups can be stored in the same
+;  file, as in this example for pb-3 (linkage group A) and pb-4 (B)
+
+; The size of the Y-axis depends on the value range,
+; because "Fixed scale" is selected in Chart options - QTLs&Graphs.
+; If "Fixed length" were selected, all Y-axes would have the same length.
+
+group A 
+1NE1a     0.0 t=*** c2; the text (***) shows the Kruskal-Wallis significance at this locus
+3NC6c     3.5 t=*** u
+2NA3a     4.7 t=***
+4NE11a   10.7 t=***
+3NB3     13.8 t=*** s6 ; s6: font smaller (6 pt) than the standard locus font
+2NB8a    25.6 t=***
+3NC3c    47.6 t=*   b
+3NC3a    51.8
+A04      67.7
+A05      67.7
+1NG1b   100.9
+
+qtls ; QTLs section of group A
+pb-3 auto 1 2  I C3
+     ;qtl pb-3 is calculated ("auto") from graph pb-3 (see below), 
+     ;with 1-LOD and 2-LOD thresholds
+     ;it is shown in color 3 (C3, green)
+     ;with the default fillstyle (F1, solid)
+     ;and its name is printed in italics (I)
+graphs S=5 H=28
+; Graphs section of group A, with formatting of Y-axis:
+; Step (tick interval) on Y-axis is 5 (S=5; would be 10 if not specified)
+; High (upper) limit of Y-axis = 28 (H=28; would be 30 if not specified)
+const 2.85 L3
+     ;shows a constant line (the LOD threshold of 2.85)
+     ;it is shown with linestyle L3 (dotted)
+     ;and does not appear in the legend, because it is a constant
+pb-3 Ex6Graphs.txt  I C3 S2 L5
+     ;graph pb-3 is read from file Ex6Graphs.txt (lines with Group A)
+     ;it is shown in color C3 (green)
+     ;and in the legend its name is printed in italics (I)
+     ;it is shown with linestyle L5 (dash-dot-dot)
+     ;and with symbol style S2 (solid circle)
+
+
+group B    
+3NE11a    0.0
+2NC10a    2.0
+1NE1d    22.1
+2NF2a    29.1
+2NF2b    30.9
+A09      47.9 t=***
+2NA8c    50.3 t=***
+3ND7     61.0 t=*
+3NF4     74.2 
+A08      94.2
+4ND3    105.2
+
+qtls 
+pb-4 auto 1 2  I C2
+     ;qtl pb-4 is calculated ("auto") from graph pb-4 (see below), 
+     ;with 1-LOD and 2-LOD thresholds
+     ;it is shown in color 2 (C2, red)
+     ;with the default fillstyle (F1, solid)
+     ;and its name is printed in italics (I)
+graphs 
+     ; no formatting of Y-axis specified here, 
+     ; step and range determined automatically
+const 2.85 L3
+     ;the same LOD threshold as before
+     ;shown here with linestyle L2 (dashed)
+pb-4 Ex6Graphs.txt  I C2 L4
+     ;graph pb-4 is read from file Ex6Graphs.txt (lines with Group B)
+     ;it is shown in color C2 (red)
+     ;and in the legend its name is printed in italics (I)
+     ;it is shown with linestyle L4 (dash-dot)
+     ;and with the default symbol style (S1, solid square)
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=1
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=1500
+RightMargin=1500
+TopMargin=2500
+BottomMargin=2500
+
+[Title&Footer]
+ChartTitle=Example 6
+TitleMethod=1
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=0
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=B
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=1000
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=1
+BarTops=0
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=1
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=1
+ShowTexts=1
+TextStyle=0
+Decimals=0
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=0
+YaxisLength=5000
+YaxisMMperUnit=3.50000000000E+0002
+RoundGraphPoints=1
+SymbolSize=120
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=10
+16777215
+0
+255
+32768
+8388608
+65535
+16711935
+65280
+128
+16776960
+32896

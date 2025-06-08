@@ -1,0 +1,452 @@
+; MapChart example 5 - marker highlighting and footer
+
+; In this example every marker category (e.g. each AFLP primer combination)
+; has its own color code: C2 .. C29
+
+; All color codes are defined to have the color value Black;
+; by setting one of them (e.g. C15, for primer combination E35/M59)
+; to Red it is easy to see the distribution of this type
+; over the genome.
+
+; Also, the chart title includes the page number
+; (Chart options - Title&Footer - Show on all pages with page number)
+
+group 1
+P14/M52-234p          0.0   C27
+E35/M54-7p            4.5   C11
+P11/M54-235e          5.4   C26
+E35/M58-1e            9.8   C14
+E35/M54-8e            9.8   C11
+E35/M47-3e           10.6   C4
+E35/M47-21p          10.6   C4
+E35/M48-12e          11.6   C5
+E35/M49-13e          11.6   C6
+E35/M61-9p           11.6   C17
+E35/M51-4p           11.6   C8
+E35/M48-16p          12.1   C5
+E35/M62-5p           12.7   C18
+E35/M50-9e           13.9   C7
+F2a                  19.1   C22
+P11/M48-293p         26.1   C24
+E35/M48-5e           43.9   C5
+P31/M49-229          44.7   C29
+E35/M61-13e          46.8   C17
+P14/M52-57e          56.8   C27
+E36/M54-2p           70.0   C20
+E35/M47-12e          82.3   C4
+
+
+group 2
+E35/M50-11p           0.0   C7
+H14                   7.4   C22 o ; "omitted": only dash at position shown
+E35/M59-13e          10.0   C15 o ; also "omitted", still shown in color C15 (red)
+E35/M53-3e           10.6   C10 o
+E36/M54-13p          11.6   C20
+E35/M58-8p           11.6   C14
+E35/M57-6e           11.6   C13
+E35/M51-3e           12.3   C8
+E35/M48-2p           12.8   C5
+E35/M50-10p          14.9   C7
+E35/M48-13e          36.8   C5
+E36/M51-1p           45.8   C19
+E35/M53-2p           53.7   C10
+E35/M48-6e           59.3   C5
+E35/M49-8e           68.8   C6
+
+
+group 3
+E35/M62-1p           17.5   C18
+E35/M60-5e           29.0   C16
+P14/M54-82p          31.8   C28
+E35/M59-23p          32.8   C15
+E35/M59-3e           34.2   C15
+E35/M59-22xe         34.2   C15
+E35/M62-8e           36.2   C18
+E35/M54-2e           36.2   C11
+E35/M50-13e          36.7   C7
+E35/M60-4p           36.7   C16
+E35/M49-4p           36.7   C6
+E35/M49-3e           36.7   C6
+E35/M57-9p           36.7   C13
+E36/M51-7p           36.7   C19
+E36/M59-3p           36.7   C21
+E35/M50-2p           37.7   C7
+E35/M49-1e           37.7   C6
+E35/M47-11e          38.2   C4
+E35/M47-13e          38.2   C4
+P11/M54-147p         39.4   C26
+E35/M47-14e          42.2   C4
+E35/M51-2p           46.3   C8
+E35/M48-15e          48.6   C5
+E36/M51-13e          67.9   C19
+P11/M48-464p         84.7   C24
+
+
+group 4
+E35/M47-22p           0.0   C4
+E35/M47-20e          21.1   C4
+E35/M59-19p          36.1   C15
+E35/M54-4p           45.0   C11
+E35/M54-10e          47.0   C11
+E35/M54-1e           48.2   C11
+E35/M57-8e           49.1   C13
+E35/M55-11p          50.0   C12
+E35/M51-10e          50.0   C8
+E35/M61-5bp          50.0   C17
+E35/M59-26p          50.5   C15
+E35/M49-12p          50.5   C6
+E35/M62-10p          50.5   C18
+E35/M57-4e           50.5   C13
+E35/M61-8e           50.5   C17
+E35/M59-21e          51.8   C15
+E35/M55-3p           51.8   C12
+P11/M48-120e         58.6   C24
+E35/M47-16e          62.2   C4
+E35/M47-6p           68.3   C4
+E36/M51-5p           70.3   C19
+E35/M58-5e           73.8   C14
+E35/M60-2e           76.0   C16
+
+
+group 5
+E36/M54-7e            0.0   C20
+E36/M54-5e           11.1   C20
+E35/M49-7p           22.3   C6
+E35/M48-4e           36.8   C5
+E35/M48-3p           47.8   C5
+E36/M59-14e          48.8   C21
+E35/M52-4e           48.8   C9
+E35/M51-5p           49.4   C8
+E35/M51-13e          49.4   C8
+LESATTAGA            50.0   C23
+E35/M59-8p           50.8   C15
+E35/M59-9e           51.5   C15
+E31/M54-1e           55.4   C3
+P31/M49-162          77.4   C29
+E35/M51-9e           89.5   C8
+E35/M52-7p           89.5   C9
+E35/M51-8p           89.5   C8
+
+
+group 6
+P31/M49-158           0.0   C29
+P11/M48-248p         12.0   C24
+E35/M49-9e           13.3   C6
+E35/M50-8p           14.9   C7
+E35/M62-4e           18.8   C18
+E35/M50-4e           19.3   C7
+E36/M59-5e           21.5   C21
+P14/M54-143p         22.4   C28
+E35/M58-11e          22.4   C14
+E35/M61-2e           22.4   C17
+E35/M52-13p          23.1   C9
+E36/M51-2p           23.7   C19
+LED10                23.7   C23
+E35/M61-6p           24.3   C17
+E35/M58-10p          24.3   C14
+E35/M62-11p          24.3   C18
+E35/M51-16p          24.3   C8
+E35/M59-7p           24.3   C15
+E35/M53-1p           25.3   C10
+E35/M50-5p           27.7   C7
+E35/M54-11e          29.7   C11
+E35/M57-2e           31.8   C13
+E35/M58-4p           36.1   C14
+E35/M47-18p          39.7   C4
+
+
+group 7
+P11/M54-122p          1.5   C26
+P14/M54-121e          7.4   C28
+E35/M57-7e           17.8   C13
+P11/M48-273p         33.1   C24
+E35/M51-7e           54.7   C8
+E36/M54-1p           58.2   C20
+E36/M54-10p          58.8   C20
+P11/M48-254e         59.4   C24
+E35/M53-6p           60.1   C10
+E35/M50-1p           60.6   C7
+E35/M50-17e          61.2   C7
+E36/M54-8e           62.2   C20
+E36/M54-9e           62.2   C20
+E36/M51-3e           63.3   C19
+m9e                  69.9   C22
+E35/M57-10p          74.7   C13
+
+
+group 8
+E35/M47-17e           0.0   C4
+E35/M53-4p            6.1   C10
+E35/M47-4e            8.5   C4
+E35/M55-13e          11.7   C12
+E31/M54-4p           12.5   C3
+E35/M60-3p           14.5   C16
+E35/M49-11e          17.1   C6
+E35/M48-7p           20.0   C5
+E35/M48-8e           20.0   C5
+E36/M51-4e           22.1   C19
+E35/M52-15p          22.1   C9
+E35/M52-14p          22.1   C9
+E35/M52-1p           22.1   C9
+E35/M48-11e          22.8   C5
+E35/M60-1e           22.8   C16
+E35/M47-8p           22.8   C4
+E35/M61-11e          22.8   C17
+E35/M55-7p           22.8   C12
+E35/M58-3e           22.8   C14
+E35/M48-17p          22.8   C5
+E35/M50-6e           22.8   C7
+E35/M51-12p          22.8   C8
+LED112A              22.8   C23
+E35/M47-5p           22.8   C4
+E35/M62-7p           22.8   C18
+E36/M59-10p          22.8   C21
+E35/M50-14p          22.8   C7
+E35/M58-9p           22.8   C14
+E35/M58-2p           22.8   C14
+E35/M52-3p           22.8   C9
+E35/M52-10p          22.8   C9
+E36/M54-6e           22.8   C20
+E35/M61-12e          22.8   C17
+P11/M54-163p         23.8   C26
+E35/M59-18e          23.8   C15
+E35/M59-2e           23.8   C15
+E36/M54-14e          25.6   C20
+E35/M61-1xe          26.3   C17
+H12b                 28.5   C22
+C4                   29.3   C22
+E35/M50-15e          33.0   C7
+
+
+group 9
+E35/M62-3p            0.0   C18
+P11/M54-356e         25.1   C26
+E35/M55-10p          31.6   C12
+E31/M54-2p           49.4   C3
+E35/M59-14p          51.0   C15
+E35/M50-16p          51.8   C7
+E35/M48-10e          51.8   C5
+E35/M49-10p          53.0   C6
+E36/M59-4e           53.0   C21
+E35/M52-2p           53.9   C9
+P14/M54-197p         54.8   C28
+m5p                  56.8   C22
+E35/M47-1p           62.2   C4
+P14/M52-192p         70.0   C27
+P14/M52-193p         70.0   C27
+E35/M54-9e           75.0   C11
+
+
+group 10
+E35/M59-24e          25.9   C15
+E35/M53-7e           29.4   C10
+E35/M54-3e           30.1   C11
+E35/M49-5e           32.2   C6
+E36/M59-12e          32.2   C21
+E35/M55-6p           32.2   C12
+E36/M51-10e          32.2   C19
+E35/M62-9p           32.8   C18
+E35/M52-9p           33.3   C9
+E35/M52-6e           34.9   C9
+E35/M57-1p           35.9   C13
+C20                  37.3   C22
+E35/M59-16p          42.8   C15
+A2b                  44.7   C22
+A2a                  51.3   C22
+E35/M47-10bp         73.5   C4
+E35/M47-7e           89.2   C4
+
+
+group 11
+E35/M62-2p           22.6   C18
+E35/M62-6e           24.3   C18
+P14/M52-174p         28.5   C27
+P11/M54-148e         30.1   C26
+E36/M59-2p           32.2   C21
+G20                  32.8   C22
+E36/M51-11p          33.5   C19
+E35/M49-2e           34.3   C6
+E35/M51-14p          34.3   C8
+E35/M61-7e           34.3   C17
+E36/M51-6p           35.0   C19
+E35/M51-18p          35.6   C8
+E35/M47-15e          36.5   C4
+E31/M54-5p           54.0   C3
+
+
+group 12
+E35/M57-3e            0.0   C13
+E35/M61-4ae           6.0   C17
+E35/M59-11e           7.6   C15
+E35/M59-12p           8.1   C15
+E36/M59-6e            8.1   C21
+E35/M52-12e           9.1   C9
+E36/M54-3e            9.1   C20
+E35/M52-8e            9.1   C9
+E35/M47-19e          10.2   C4
+E35/M55-15p          10.8   C12
+F19a                 10.8   C22
+F19b                 10.8   C22
+E35/M51-6p           10.8   C8
+E35/M49-6p           10.8   C6
+E35/M50-7p           10.8   C7
+E35/M51-11p          10.8   C8
+E36/M54-12p          10.8   C20
+E35/M48-14e          11.4   C5
+E35/M52-11p          11.4   C9
+E36/M59-1p           11.4   C21
+E35/M50-3e           11.4   C7
+E35/M61-3bp          12.2   C17
+E35/M48-1e           13.0   C5
+E35/M55-9e           13.7   C12
+E35/M59-15p          16.3   C15
+
+
+group 13
+P11/M54-218e          0.0   C26
+P11/M52-81e           3.5   C25
+P31/M49-133          16.1   C29
+P31/M49-136          16.1   C29
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=1
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=2500
+RightMargin=2500
+TopMargin=2500
+BottomMargin=2500
+
+[Title&Footer]
+ChartTitle=Example 5
+TitleMethod=2
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=104
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=B
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=1
+BarTops=0
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=0
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=1
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=2
+ShowTexts=1
+TextStyle=0
+Decimals=0
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=1
+YaxisLength=5000
+YaxisMMperUnit=2.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=200
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=30
+16777215
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+255
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0

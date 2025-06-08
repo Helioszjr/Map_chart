@@ -1,0 +1,193 @@
+; MapChart example 2 - formatting
+
+; Demonstration of some linkage group header and locus formatting parameters
+
+; The ";" character causes MapChart to ignore all further text on the line.
+; It can be used to include comments in the map files,
+; or to temporarily hide parts of the data.
+
+; Apart from comments or blank lines, the map file should start
+; with a linkage group header
+
+; The default color (C1) is set to white and the background is transparent;
+; the background color of the page (C0) is set to dark blue to make
+; the white lines and texts visible. See Chart options - Colors tab.
+
+; The chart title ("Example 2") is specified on the Chart options - Page layout tab
+
+; Try out the effects of changing Chart options on the Bars, Loci and
+; Colors tabs, and of deleting the "A" parameter from the second linkage group. 
+
+group L1 
+; This linkage group header specifies only the title ("L1") without formatting information
+; The linkage group bar extends from position 0.0 (first locus) to 50.3 (last locus);
+; The color of the bar, and default color for loci will be drawn with color code C1,
+; because this is the default value and no other color code was specified.
+
+; After the header follow the loci, with name, position and formatting.
+; The default locus font is specified on the Chart options - Loci tab
+
+3NE11a    0.0         ; no formatting information, default font and default color (C1)
+2NC10a    2.0  U      ; locus name underlined (if default is not underlined, else vice versa)
+1NE1d    22.1  C2     ; locus name in color code 2
+2NF2a    29.1
+2NF2b    30.9  BI C4  ; locus name bold, italic, color code 4
+4NE1     31.0  S14    ; locus name in larger font (14 pt)
+A09      47.9  U C3   ; locus name underlined, color code 3
+2NA8c    50.3
+
+
+GROUP "L 2"  E=120 B C4 F7 A V=60
+; This linkage group header specifies :
+; - a title (between quotes, because it contains a space);
+;   the title will not be shown in this case because of the "A" parameter
+;   (see below)
+; - an End position (E=120) which causes the bar to be extended beyond the last 
+;   locus, 
+; - a bold title (B), if the default title font is not bold, or vice versa
+; - color code C4 (here: yellow) to be used for title, bar, positions, 
+;   and as default color for locus names, QTLs, bar segments and graphs
+; - fill style F7 (cross hatched) for the linkage group bar.
+; - vertically aligned (A) with preceding group. The title of the first linkage group 
+;   (L1) is shown as the title of the entire aligned group, the titles of the other 
+;   linkage groups are not shown.
+; - a vertical shift (V=60): 60 mm down, so it appears below the preceding group
+
+1NG7a     0.0  C3      ; color code 3
+1NG8a    18.7
+4NA1a    37.0
+2NB10    40.8
+A01      65.5  I C8    ; locus name italic, color code C8
+A19      65.6  B C8    ; locus name bold, color code C8
+1NG10a   65.7 S14 I C3 ; locus name in font size 14 pt, italic, color code C3
+1NG7b    66.4
+1NG8b   103.9
+; loci A01, A19 1NG10a and 1NG7b will be shown at the same position 
+; if decimals is set to 0 (Chart options - loci tab), 
+; but at different positions if decimals is set to 1 or higher.
+
+; The position of locus names and positions (right or left of the chromosome bar)
+; can be switched on the Chart options - Loci dialog page.
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=0
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=2500
+RightMargin=2500
+TopMargin=2500
+BottomMargin=2500
+
+[Title&Footer]
+ChartTitle=Example 2
+TitleMethod=1
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=0
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=0
+BarTops=2000
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=1
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=2
+ShowTexts=1
+TextStyle=0
+Decimals=0
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=1
+YaxisLength=5000
+YaxisMMperUnit=2.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=200
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=10
+7883776
+16777215
+255
+8454016
+65535
+33023
+16711935
+65280
+12615935
+16776960
+32896

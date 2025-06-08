@@ -1,0 +1,178 @@
+; MapChart example 1 - basic map
+; This is a map file exported by JoinMap, and imported
+; and saved as *.mct - file by MapChart.
+
+; No manual editing was done, except for the addition of these comments.
+
+; Fri, 28 Dec 2001, 12:15
+; ngrp=2, nloc=43
+
+group a
+TG580_1.131            0.000
+E36/M51-9p             6.600
+TG255_1.117            9.000
+E36/M54-2p            18.200
+E35/M47-12e           20.200
+E35/M47-9p            21.400
+TG220_6.100           24.000
+TG465_1.90            29.500
+TG71_1.58             49.200
+TG59_1.52             49.200
+E35/M61-13e           56.700
+TG273_1.36            56.700
+E35/M48-5e            59.000
+
+group b
+TG68_12.14             0.000
+TG180_12.0             3.700
+CT120bp_11.86/12.30   15.200
+E35/M57-3e            29.300
+E35/M61-4ae           35.400
+E35/M47-19e           37.000
+E35/M59-11e           37.000
+E35/M59-12p           37.000
+E36/M59-6e            37.000
+E35/M52-12e           38.000
+E35/M52-8e            38.000
+E36/M54-3e            38.000
+E35/M55-15p           38.000
+F19a                  38.000
+F19b                  38.000
+E35/M51-6p            38.000
+E35/M49-6p            38.000
+E35/M50-7p            38.000
+E35/M51-11p           38.000
+E36/M54-12p           38.000
+E35/M48-14e           38.600
+E35/M52-11p           38.600
+E36/M59-1p            38.600
+E35/M50-3e            38.600
+E35/M61-3bp           39.400
+E35/M48-1e            40.200
+E35/M55-9e            40.900
+E35/M59-15p           43.400
+E36/M54-11e           57.600
+CT156_12.72           69.200
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=1
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=2500
+RightMargin=2500
+TopMargin=2500
+BottomMargin=2500
+
+[Title&Footer]
+ChartTitle=
+TitleMethod=1
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=0
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=B
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=1
+BarTops=0
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=1
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=2
+ShowTexts=1
+TextStyle=0
+Decimals=1
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=1
+YaxisLength=5000
+YaxisMMperUnit=2.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=200
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=10
+16777215
+0
+255
+32768
+8388608
+65535
+16711935
+65280
+128
+16776960
+32896

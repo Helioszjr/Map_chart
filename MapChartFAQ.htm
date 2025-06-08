@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Author" CONTENT="Roeland E. Voorrips"> 
+<TITLE>MapChart FAQ</TITLE>
+</head>
+<body LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<p align="center"><font face="Arial" size=6><b>MapChart FAQ (Frequently Asked Questions)</b></font></p>
+
+<h1>Introduction</h1>
+
+<p>MapChart is no longer actively developed or supported as its
+developer (Roeland Voorrips) has retired. However we have prepared this FAQ to
+answer most common questions. In addition there is a 
+<a HREF="MCManual.htm">manual</a> in html format in
+the MapChart program folder (usually c:\Program Files (x86)\MapChart\ or
+similar) that can also be accessed from the MapChart Help menu.</p>
+<p>Also in the program folder several examples are provided. Take a minute
+to open these files: they may give you new ideas and show how to work with 
+QTLs, LOD graphs, formatting and more.</p>
+
+<h1>Getting and installing Mapchart</h1>
+
+<p>MapChart can be found at <a
+href="https://www.wur.nl/en/show/mapchart.htm">https://www.wur.nl/en/show/mapchart.htm</a>.</p>
+
+<p>A Windows installer can be downloaded using the Download
+installer button. The download is a zip file that contains one file named MapChart232Install.exe.
+Unzip this file and execute it; it will install MapChart and create a link in
+the Start menu.</p>
+
+<h1>License and copyright</h1>
+
+<p>The copyright of MapChart belongs to Wageningen University
+and Research, Wageningen, the Netherlands. MapChart may be used for free by
+anyone and any organization, commercial or otherwise, but at one’s own risk. MapChart
+may not be distributed for commercial purposes otherwise than by sharing the download
+link(s) provided by Wageningen University and Research. Use in an educational or academic
+setting, including in classes and groups, is expressly allowed.</BR>
+This software has been designed with care and is believed to perform as intended.
+However, neither Wageningen University and Research, nor any of its subsidiaries or employees 
+accept any liability for material or immaterial damage resulting from the use of this 
+software.</p>
+
+<h1>Is MapChart compatible with my OS or Windows version?</h1>
+
+<p>MapChart will run on any 32-bit or 64-bit Windows version,
+from Windows95 up to (at the time of writing) Windows11. MapChart is not available
+for Linux or Apple OS.</p>
+
+<h1>The map is too high to fit on the page, what can I do?</h1>
+
+<p>If the charts are too high to fit on the available space, a message to that effect
+will be shown or the chromosomes will be split into segments shown side by
+side. There are several things that can be done:</p>
+
+<ul>
+<li><b>Increase the available space</b><br/>
+   The total height of the space available for the charts is determined by the page
+   height, minus the top and bottom margins, minus the height of the chart title,
+   minus the height of the Title bottom space (i.e. the space between title and
+   linkage group names), minus the height of the linkage group names, minus the
+   height of the Names bottom space (the space between the names and the chart
+   area), minus the height of the footer.<br/>
+   All these can be set in the Chart options dialog, tabs “Page size”,
+   “Title&amp;Footer” and “Page layout” (including portrait instead of landscape
+   orientation).<br/>
+   To make use of the increased space also increase the bar length.</li>
+<li><b>Decrease the height needed by the chart</b><br/>
+   The height needed by the charts is the maximum of<br/>
+   (1) the length of the longest chromosome bar and vertical shifts of chromosomes and<br/>
+   (2) the space needed to print the locus names and positions.<br/>
+   (1) is affected by "Bar length" on page “Bars” of the Chart options dialog and
+   by vertical shift formatting specified for the individual linkage groups 
+   (indicated after the linkage group names in the chart data, 
+   see the <a HREF="MCManual.htm">MapChart manual</a>).<br/>
+   (2) is affected by the locus font size, number of locus names per line and the
+   method for showing the positions; all on page “Loci” of the Chart options
+   dialog:<br/>
+   Increasing the number of locus names per line allows more locus names
+   to be shown side-by-side instead of under each other, if they are at the same
+   (rounded) position. The rounding of positions is determined by the Decimals
+   specified on this page.<br/>
+   Setting Locus names per line to 0 suppresses all locus
+   names; when this is combined with Position methods “No positions” or “Ruler at
+   page margin”, the loci cannot cause a chart height problem anymore.<br/>
+   Instead of suppressing all locus names by setting Locus names per line to 0 it is also
+   possible to show just some specific loci. Add formatting code “o” (for “omit” )
+   after all loci except the ones whose names should be shown. The “omitted” loci
+   will still be shown as lines on the chromosome bar.</li>
+<li><b>Split linkage groups into segments</b><br/>
+   By splitting linkage groups into segments of fixed size that are shown side by side
+   a chart can be made to fit on the page. Set “Split map interval” on page “Bars” of the
+   Chart options dialog to the desired length of the segments. Setting this to 0
+   removes the splitting.</li>
+</ul>
+
+<h1>Map units, mixing genetic and physical maps</h1>
+
+<h2>Can I draw maps with basepair coordinates instead of cM (centiMorgans)?</h2>
+
+<p>Yes, in principle any type of unit can be used, but MapChart
+was designed with maps of a few tens to a few hundreds of cM in mind. Larger
+numbers may look ugly when positions are shown. Also if positions are shown as
+fixed tick intervals or using a ruler at the page margin the results may not
+look nice if very small or very large distances occur. These problems may be
+avoided:</p>
+<ul>
+<li>By not showing any position indicators</li>
+<li>By re-scaling the positions (e.g. using kB or MB units rather
+than base pairs)</li>
+</ul>
+
+<h2>Can I show genetic (cM) and physical (base pairs) maps side by side?</h2>
+
+<p>Yes, but MapChart uses only one units system for all maps.
+Therefore you need to re-scale the physical map positions so that their lengths
+are in the same numeric range as the genetic maps. </p>
+
+<p>A different solution is to draw the physical and genetic
+maps in separate MapChart projects, each with their own scale, and to combine
+the two using e.g. PowerPoint. (MapChart exports images a.o. in emf format; if this is
+imported in PowerPoint the entire image can be “ungrouped” in successive steps
+and separate linkage group maps can be moved).</p>
+
+<h1>QTL bars</h1>
+
+<h2>What is the difference between an “auto QTL” and a “normal” QTL?</h2>
+
+<p>In the case of a normal QTL the QTL bars are defined
+directly in the MapChart file:<BR/>
+after the QTL name 4 positions are given: the
+start of the outer (e.g. 2-LOD) interval, the starts of the inner (1-LOD)
+interval, the end of the inner, and the end of the outer interval, e.g.:<br/>
+<code>demo_qtl 50 60 70 80</code></p>
+<p>The limits of an “auto QTL” bar are calculated from a LOD graph:<BR/>
+given the
+graph data (in a separate file, see below in the section on graphs) MapChart
+computes the extent of the inner and outer interval automatically based on the
+LOD-difference thresholds that are given in the auto QTL definition: 2 numbers
+after the QTL name and the “auto” keyword, usually 1 and 2 for the 1-LOD inner
+and 2-LOD outer interval, e.g.:<BR/>
+<code>demo_qtl auto 1 2</code></p>
+
+<h2>I get an error message about a QTL</h2>
+
+<p>Some common errors are: </p>
+<ul>
+<li>the QTL name contains a space: enclose the name in &quot;double
+quotes&quot;. Make sure that these are ordinary double quotes (&quot;&quot;)
+and not the “pretty quotes” generated by e.g. Word (“”).</li>
+<li>The 4 positions of a “normal” QTL are not in ascending order</li>
+<li>The two thresholds of an “auto QTL” are not in ascending order</li>
+<li>An “auto QTL” refers to a graph that is not specified. A graph with exactly 
+    the same name must be specified in the Graphs section.</li>
+</ul>
+
+<h2>How can I show just one interval, not an inner and an outer interval?</h2>
+
+<p>The standard representation is an inner (1-LOD) interval as
+a rectangle, and the outer interval as lines extending from the inner interval
+and ending with whiskers. There are 3 possibilities to show a QTL as just one
+interval:</p>
+<ul>
+<li>Just a line with whiskers at the ends:<BR/>
+   give 3 times the start position and once the end position, e.g.:<br/>
+   <code>demo_qtl 50 50 50 70</code></li>
+<li>A line with whiskers at the end and an indicator of a point (say,
+   the LOD maximum) within that interval:<br/>
+   give the start, 2 times the max.LOD position, and the end position, e.g.:<br/>
+   <code>demo_qtl 50 60 60 70</code></li>
+<li>Just a rectangle like the inner interval, no outer interval:<br/>
+   give 2x the start and 2x the end position, e.g.:<br/>
+   <code>demo_qtl 50 50 70 70</code></li>
+</ul>
+
+<p>For an auto-QTL there are two options:</p>
+<ul>
+<li>A line with whiskers at the end and an indicator of the LOD
+   maximum within that interval:<br/>
+   give as LOD-difference thresholds 0 and the one
+   defining the interval, e.g.:<br/>
+   <code>demo_qtl auto 0 2</code></li>
+<li>Just a rectangle like the inner interval, no outer interval:<br/>
+   give 2x the same LOD-difference threshold, e.g.:<br/>
+   <code>demo_qtl auto 2 2</code></li>
+</ul>
+
+<h2>How can I show multiple QTLs on the same linkage group?</h2>
+
+<p>A linkage group can have only a single qtls section, but
+within that section (i.e. under the line that starts with “qtls”) you can
+define multiple qtls, each on a separate line.</p>
+
+<h2>Can I draw auto-QTL bars based on Kruskal-Wallis scores instead of LOD
+scores?</h2>
+
+<p>In principle you can calculate auto-QTLs based on any set of
+values, so also on e.g. the KW scores. However it is not meaningful to draw an auto-QTL
+based on the KW scores, as there is no fixed relation between the KW value and
+the probability of finding the causal gene in the interval, as is
+(approximately) the case for LOD values in Interval mapping.</p>
+
+<h1>LOD graphs</h1>
+
+<h2>Is it possible to draw multiple LOD graphs alongside the same linkage
+group?</h2>
+
+<p>Yes, that is possible, but all graphs will be plotted in the
+same frame, using the same Y axis. A linkage group can have only a single
+graphs section, but within that section (i.e. under the line starting with “graphs”)
+you can define multiple graphs, each on a separate line.<br>
+One or more of these graphs can be constants: lines that indicate the (LOD)
+threshold over the entire linkage group. Examples 6 and 7 (located
+in the MapChart program folder) demonstrate this.</p>
+
+<h2>I have a file with LOD data but MapChart cannot open it</h2>
+
+<p>That is correct. MapChart can only open files in the joinmap
+/ MapQTL <u>map</u> format, or its own *.mct MapChart project files. In order to
+import LOD data to draw a graph you need to define the linkage group in the
+normal way (i.e. start with a line for the group name, then the marker names
+and positions), and under that map definition start a graphs section with the
+keyword “graphs”. Then you can define graphs, each on one line, starting with
+the name, followed by the file from which to read the LOD data. A very short
+example (where mygraph is the name given to this graph, and MQout.dat the file
+with the LOD data):</p>
+
+<p><code>
+group A<br/>
+Mrk1  0<br/>
+Mrk2 10<br/>
+Mrk3 50<br/>
+graphs<br/>
+mygraph MQout.dat</code></p>
+<p>For more examples see Examples 6 and 7 (located
+in the MapChart program folder).</p>
+
+<h2>I get an error message about a graph</h2>
+
+<p>Some common errors are: </p>
+<ul>
+<li>the graph name contains a space: enclose the name in &quot;double
+quotes&quot;. Make sure that these are ordinary double quotes (&quot;&quot;)
+and not the “pretty quotes” generated by e.g. Word (“”).</li>
+<li>The file name refers to a file that is not in the same folder as
+the MapChart project:<br/>
+it is possible to include a path in the file name, but
+probably it is easier to just copy the file to the folder with the MapChart
+project</li>
+<li>The file name contains spaces:<br/>
+enclose it in &quot;double quotes&quot; (again, not in Word’s “pretty quotes”).</li>
+<li>The file is not in the correct format:<br/>
+make sure it is either a
+file exported by MapQTL (up to version 6, at the time of writing) or it is in
+the format as explained in the <a HREF="MCManual.htm">MapChart manual</a>.</li>
+</ul>
+
+<h1>Bar segments</h1>
+
+<h2>How do I highlight a segment of the chromosome bar to show e.g. the centromeric
+region?</h2>
+
+<p>Below the map of the linkage group add a segments section using
+the keyword “segments”. Below that specify the segment as start and end
+position, followed by desired formatting. See “Segments section” in the
+<a HREF="MCManual.htm">manual</a>.</p>
+
+<h1>Fitting maps on a page</h1>
+
+<h2>My linkage groups are split into segments</h2>
+
+<p>When importing map data, MapChart attempts to fit the maps
+on the default page size, if needed by adjusting some of the chart options. As
+a last resort it will set the Split map interval option (on the Chart Options
+dialog, page Bars) to some value larger than 0. For example, if it is set to 50
+the maps will be split every 50 cM. Set this option back to 0 to undo the
+splitting. Of course you will have to adjust other options then, see next
+question.</p>
+
+<h1>Other questions</h1>
+
+<h2>How can I draw a decimal point instead of a decimal comma,
+or v.v.?</h2>
+
+<p>There is no option in MapChart to control this, it depends on the Windows settings.
+Probably you can change that in Regional settings of the Control panel or Settings app or
+something similar.</p>
+
+<p>MapChart will read files with decimal points or decimal comma's,
+irrespective of the Windows settings: it first attempts to read the data file 
+according to these settings and if that fails, it switches points and comma's 
+in all text strings representing numbers and tries to interpret them again.
+There should be no thousands-separators in the numbers.</p>
+
+<p>Note that there may be differences between the settings in Windows and in Microsoft
+Office on your computer; MapChart is sensitive to the Windows but not to the
+Office settings.</p>
+
+</body>
+
+</html>

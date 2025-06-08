@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Author" CONTENT="Roeland E. Voorrips"> 
+<TITLE>MapChart manual</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080" BGCOLOR="#ffffff">
+
+<P ALIGN="CENTER"><FONT FACE="Arial" SIZE=6>MapChart <SUP>&copy;</SUP></FONT></P>
+<P ALIGN="CENTER"><FONT FACE="Arial" SIZE=4>Roeland E. Voorrips, 1999 - 2023</FONT></P>
+<FONT FACE="Arial" SIZE=2>
+
+<P><A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Contents"></A><B>Table of Contents</B></P>
+<P>
+<A HREF="#_Toc09">Copyright notice</A><BR/>
+<A HREF="#_Toc10">Disclaimer</A><BR/>
+<A HREF="#_Toc11">FAQ (Frequently Asked Questions)</A><BR/>
+<A HREF="#_Toc12">Version</A><BR/>
+<A HREF="#_Toc13">How to refer to MapChart</A><BR/>
+<A HREF="#_Toc14">What is MapChart ?</A><BR/>
+<A HREF="#_Toc15">Installation</A><BR/>
+<A HREF="#_Toc16">New features and upgrade issues</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc17">Upgrading from version 1.x</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc18">Upgrading from version 2.0</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc19">Upgrading from version 2.1</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc19a">Upgrading from version 2.2</A><BR/>
+<A HREF="#_Toc20">Drawing charts</A><BR/>
+<A HREF="#_Toc21">Files and directories</A><BR/>
+<A HREF="#_Toc22">Linkage groups versus Chromosomes</A><BR/>
+<A HREF="#_Toc23">Marker distribution analysis</A><BR/>
+<A HREF="#_Toc24">Data format</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc25">Linkage group header</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc26">Loci section</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc27">Segments section</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc28">QTLs section</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc29">Graphs section</A><BR/>
+<A HREF="#_Toc30">Graph files</A><BR/>
+<A HREF="#_Toc31">Chart options</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc32">Page size page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc33">Title&amp;Footer page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc34">Page layout page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc35">Colors&amp;Lines page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc36">Bars page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc37">Loci page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc38">QTLs&amp;Graphs page</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc39">Homologs pages</A><BR/>
+<A HREF="#_Toc40">Menu structure and Keys</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc41">File menu</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc42">Edit menu</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc43">Chart menu</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc44">Tools menu</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc45">Window menu</A><BR/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#_Toc46">Help menu</A><BR/>
+<A HREF="#_Toc47">Toolbar</A><BR/>
+<A HREF="#_Toc48">Examples</A><BR/>
+<A HREF="#_Toc49">Problems and solutions</A><BR/>
+<A HREF="#_Toc50">Support</A><BR/>
+<A HREF="#_Toc51">Index</A><BR/>
+</P>
+<P>&nbsp;</P>
+
+<P><A NAME="CopyrightNotice"></A><A NAME="_Toc09"></A><B>Copyright notice</B></P>
+<P>The copyright to MapChart belongs to Wageningen University and Research,
+   P.O. Box 16, 6700&nbsp;AA Wageningen, The Netherlands. To obtain the software and a free personal license
+   visit the MapChart pages at
+   <A HREF="https://www.wur.nl/en/show/Mapchart.htm">https://www.wur.nl/en/show/Mapchart.htm</A>.
+   For permission to distribute MapChart on a commercial or non-commercial basis please contact us through
+   the contact persons listed on those pages.</P>
+
+<P><A NAME="Disclaimer"></A><A NAME="_Toc10"></A><B>Disclaimer</B></P>
+<P>This software has been designed with care and is believed to perform as intended.
+   However, neither Wageningen University and Research, nor any of its subsidiaries or employees 
+   accept any liability for material or immaterial damage resulting from the use of this 
+   software.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Disclaimer"></A><A NAME="_Toc11"></A><B>FAQ (Frequently Asked Questions)</B></P>
+<P>This Manual is the final documentation for MapChart. However some questions that
+   are frequently asked are addressed in a <a HREF="MapChartFAQ.htm">MapChart FAQ</a>
+   document which, like this Manual, is located in the MapChart program folder.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Version"></A><A NAME="_Toc12"></A><B>Version</B></P>
+<P>The current version is MapChart 2.32, released November 2017.
+   The most recent version can always be found on the website of Wageningen University and Research 
+   (at the time of writing:
+   <A HREF="https://www.wur.nl/en/show/Mapchart.htm">https://www.wur.nl/en/show/Mapchart.htm</A>).</P>
+
+<P><A NAME="HowToRefer"></A><A NAME="_Toc13"></A><B>How to refer to MapChart</B></P>
+<P>A description of MapChart appears in the following publication:<BR/>
+   Voorrips, R.E., 2002. MapChart: Software for the graphical presentation of
+   linkage maps and QTLs. The Journal of Heredity 93 (1): 77-78.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="WhatisMapChart"></A><A NAME="_Toc14"></A><B>What is MapChart ?</B></P>
+<P>MapChart is a computer package that produces charts of genetic linkage and QTL data.
+   These charts are composed of a sequence of vertical bars representing the linkage groups or chromosomes.
+   On these bars the positions of loci are indicated, and next to the bars QTL intervals and QTL graphs
+   can be shown. MapChart reads the linkage information (i.e. the locus and QTL names and their positions)
+   from text files. This information has to be calculated beforehand, usually with genetic mapping software
+   such as JoinMap<SUP>&reg;</SUP> and MapQTL<SUP>&reg;</SUP>.</P>
+<P>The charting needs of geneticists vary widely. Therefore MapChart comes with many options to adapt the
+   charts to different purposes. However, no charting package can cater for all situations.
+   Charts will often have to be adapted manually. Therefore MapChart is designed to produce graphic files
+   which can be imported by and edited with other software.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Installation"></A><A NAME="_Toc15"></A><B>Installation</B></P>
+<P>MapChart will usually be installed through a setup program. This will create a new directory
+   &quot;MapChart&quot;, by default under the Program files (x86) directory.
+   In this directory MapChart.exe, MCManual.htm (this manual) and several other files
+   are placed along with a subdirectory &quot;Examples&quot;.
+   The setup program will also create a MapChart entry in the Start menu.</P>
+   
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="UpgradeIssues"></A><A NAME="_Toc16"></A><B>New features and upgrade issues</B></P>
+<P>For an overview of the new features, enhancements and bug fixes since previous versions of MapChart,
+   see the <A HREF="MCWhatsNew.htm">MCWhatsNew.htm</A> file in the MapChart program directory.
+   MapChart 2.0 was a completely rewritten version with many new features and a new user interface.
+   Version 2.1 added the possibility to show <A HREF="#Homologs">homologies</A>
+   between loci on different linkage groups, <A HREF="#OptionsTitleFooter">Chart titles</A>,
+   the automatic <A HREF="#LinkGrpsChrom">vertical alignment</A> of linkage groups
+   to show that they belong to the same chromosome, and
+   <A HREF="#OptionsTitleFooter">page footers</A> with page number, date and/or file name.
+   The main changes in version 2.2 were the &quot;<A HREF="#OmitLocus">omit</A>&quot; option
+   for locus names, the possibility to export bitmaps (*.bmp) as well as metafiles,
+   and an extended <A HREF="#GraphFiles">graph file</A> format that allows files
+   to contain data for multiple linkage groups and the reading of MapQTL 5.0 output files.</P>
+<P>Version 2.3 added more flexible zooming of the charts and had a more robust
+   import of MapQTL 5.0 / 6.0 output files (the previous version was limited to only a few
+   population types). QTL names can now be suppressed. Also a different installer was used
+   as the previous one occasionally gave problems under Windows 7 and 8.</P>
+<P>The current version (2.32) addresses an issue where on some systems MapChart could not
+   create a window, a problem that sometimes arose or disappeared after a Windows update.</P>   
+
+<P><A NAME="_Toc17"></A><B><I>Upgrading from version 1.x</I></B></P>
+<P><A NAME="UpgradeColor"></A>The current version of MapChart will import
+   the *.map / *.set file pairs produced by version 1.x.
+   All the old formatting is still valid, with the exception of the
+   color codes. In version 1.x, the default color code was C0, and only
+   codes C0 - C9 were available. The background color was specified
+   separately and did not correspond to a color code.
+   In contrast, the current version can handle up to 1000 color codes,
+   code C0 specifies the background color and C1 the default color.
+   When importing version 1.x files, MapChart automatically assigns the
+   old background color to C0, and C0 - C9 to the new codes C1 - C10.
+   In this way the charts are produced with the same colors as before.
+   However, when editing these charts the new color codes must be used.
+   Further, in version 1.x color codes could be specified with only the
+   number; in the current version the number must be preceded with a
+   &quot;c&quot; or &quot;C&quot;.</P>
+<P><A NAME="UpgradeDefDir"></A>In version 1.x, the command-line
+   parameter /d=&lt;default directory&gt; could be specified
+   with or without the &quot;/&quot; in front. The current version
+   requires the &quot;/&quot;, because the first parameter without
+   &quot;/&quot; is interpreted as a file to be opened.
+   It may therefore be necessary to change any shortcuts referring to MapChart.</P>
+
+<P><A NAME="_Toc18"></A><B><I>Upgrading from version 2.0</I></B></P>
+<P>Files of version 2.0 are generally displayed unchanged in version 2.3, with two exceptions:</P>
+<UL>
+<LI>The indicators of highlighted loci (indicators are the lines connecting
+    locus names to their position on the linkage group bar):
+	these indicators are now shown bold and in the color of the locus name.
+	This can be changed by clearing the
+	"<A HREF="#IndicatorsHighlight">Highlighting indicators</A>" checkboxes
+	on the Chart options - Bars page.</LI>
+<LI>The locus texts (the texts that can be shown in separate columns next to
+    the locus names) are now shown without the formatting  (style, color, size)
+	of individual locus names. In order to apply this formatting also to the
+	locus texts check &quot;<A HREF="#TextLocusStyle">Text in locus style</A>
+	&quot; on the Chart options – Loci page.</LI>
+</UL>
+
+<P>In some cases small changes in the data are needed:</P>
+<UL>
+<LI>If graphs with the name "const" are present, these should be renamed
+    as "const" is now a keyword</LI>
+<LI>Comment characters (";") should be preceded by a space if they don't
+    occur at the start of a line to make sure
+	they are recognized as the start of a comment,
+	to conform to the JoinMap / MapQTL standard.</LI>
+</UL>
+
+<P><A NAME="_Toc19"></A><B><I>Upgrading from version 2.1</I></B></P>
+<UL>
+<LI>If <A HREF="#GraphFiles">Graph files</A> contained columns with caption
+    &quot;position&quot; or &quot;group&quot; these must be changed,
+	as these words are recognized keywords in version 2.2.</LI>
+</UL>
+
+<P><A NAME="_Toc19a"></A><B><I>Upgrading from version 2.2</I></B></P>
+<P>No changes are needed, all existing projects will still produce identical results.</P>
+
+<P>In general, files produced by newer versions may be read incorrectly or not at all by older versions. </P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Drawingcharts"></A><A NAME="_Toc20"></A><B>Drawing charts</B></P>
+<P><A NAME="DataChartSheet"></A>A map window in MapChart has two pages, 
+   which can be selected by clicking their tabs: the Data page, 
+   which shows an editor where the names, positions and formatting of the map elements are entered, 
+   and the Chart page where the charts are displayed. </P>
+<P>The drawing of a chart starts with a linkage map, such as produced by JoinMap, 
+   with a sequence of linkage groups each with the loci listed in ascending order 
+   of position (<A HREF="#Examples">Example 1</A>). To each linkage group QTL bars and graphs can be added, 
+   and segments of the linkage groups can be highlighted. All this information is entered 
+   in the Data page (see <A HREF="#DataFormat">Data Format</A>), which is displayed when you choose 
+   File – New from the Main menu. Map files can also be imported, by choosing File – Open 
+   and selecting file type &quot;Map file&quot; (or &quot;All files&quot;, if your map file has 
+   an extension other than ".map"); in that case the Chart page with the calculated chart is shown.</P>
+<P><A HREF="#ChartOptions">Chart Options</A> (Tools menu) is used to specify the general appearance 
+   of the charts, such as the fonts used for the different elements, the various colors, the size 
+   and layout of the pages etc. Finally, for individual elements exceptions to these general 
+   chart option can be specified in the Data page, such as a different font size for specific loci, 
+   and extra formatting such as fill style, color codes can be added 
+   (see <A HREF="#DataFormat">Data Format</A>).</P>
+<P>The chart pages are displayed by choosing the Chart tab, or by opening a map or MapChart data file. 
+   If no charts can be calculated because of errors in the data, or because the charts cannot be 
+   fitted on the page, an error message is shown and the Data page is displayed. After editing the data, 
+   select the Chart page to see the charts. Some common errors and solutions are discussed in the 
+   <A HREF="#Problems">Problems</A> section.</P>
+<P>Once the charts are drawn, the Chart page opens showing the full page as it would appear on paper, 
+   including the margins. Menu commands, buttons and key commands are then available for navigating 
+   through the pages, moving around on the current page and zooming in or out 
+   (see <A HREF="#ChartMenu">Chart menu</A>).</P>
+<P>The data can be saved and printed by selecting File – Save or File – Print data from the Main menu. 
+   Chart pages can printed (Chart – Print), or copied or <A HREF="#Export">exported</A> as 
+   Enhanced Metafiles (Chart – Copy or Chart – Export). See the <A HREF="#Problems">Problems</A> section 
+   for solutions to some common problems with importing charts into 
+   word processing and presentation software.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="FilesDirs"></A><A NAME="_Toc21"></A><B>Files and directories</B></P>
+<P>MapChart datafiles have the extension *.mct. In addition, MapChart can read 
+   the *.map / *.set file pairs produced by MapChart version 1.x; on reading 
+   these files the color codes (that followed a different scheme in version 1.x) 
+   will be updated automatically. If a *.map file without corresponding *.set file 
+   is opened (such as map files exported by Joinmap) 
+   the <A HREF="#DefaultChartOptions">Default Chart Options</A> will be used. 
+   If a chart contains graphs, for each graph line
+   the specified <A HREF="#GraphFiles">graph file</A> must exist. </P>
+<P><A NAME="DefaultDir"></A>The Open file and Save file dialogs start 
+   in the last used working directory.
+   If this directory is not accessible a default working directory will be used.
+   This default directory can be specified with the command-line option /D=&lt;dir&gt;.
+   If no default directory is specified, c:\ will be used.</P>
+<P><A NAME="ChartFiles"></A><A NAME="EMFfiles"></A><A NAME="Export"></A>MapChart can export
+   <B>chart files</B>, each containing a page with one or more linkage group charts,
+   in the same directory as the *.mct file. These chart files have the name of the *.mct file
+   followed by a three-digit page number, and extension ".emf", indicating that they are in
+   "Enhanced Metafile" format, or &quot;.bmp&quot; for Bitmap format.
+   For example, exporting metafiles from a project named apple.mct will produce apple001.emf,
+   apple002.emf and so on. These files can be imported into other applications such as
+   word processors and presentation software.
+   <B>Please note that exported Bitmaps will generally be very large;</B> in the order
+   of 50-60 MB for an A4 page at a resolution of 600 dpi.
+   Almost always Metafiles will be preferable to Bitmaps. </P>
+<P>Also individual pages can be copied to the Clipboard (select Chart menu – Copy page
+   or the Copy Page button) and pasted into other applications that can handle enhanced
+   metafiles. It may be necessary to use &quot;Paste special&quot; or &quot;Paste as metafile&quot;
+   instead of &quot;Paste&quot; in the receiving application.
+   See the <A HREF="#Problems">Problems</A> section for solutions to some common problems
+   with importing charts into word processing and presentation software.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="LinkGrpsChrom"></A><A NAME="_Toc22"></A><B>Linkage groups versus Chromosomes</B></P>
+<P>In general, MapChart draws all linkage groups side-by-side as independent units. Linkage group declarations can start with the keywords &quot;Group&quot; or &quot;Chrom&quot;; they have exactly the same effect, and the &quot;Chrom&quot; keyword is only included for compatibility with older JoinMap versions.</P>
+<P>However, sometimes it is known that two or more linkage groups represent different parts of the same chromosome. In this case it is customary to draw these linkage groups aligned vertically, one above the other. MapChart offers a possibility to do that, using the <A HREF="#AlignVertically">Align vertically</A> parameter in the linkage group header. This parameter creates an aligned group of linkage groups, which are treated as a unit. This affects not only the drawing of the maps, but also the drawing of <A HREF="#Homologs">Homologs</A>: Homologs between linkage groups within the same  &quot;aligned group&quot; are drawn like homologs within the same linkage group. Also the Combine Maps tool treats these aligned groups as units.</P>
+<P>If the <A HREF="#SplitMap">Split Map</A> chart option is active, the maps of long linkage groups are divided into parts that are drawn side-by-side. In that case, vertical alignment becomes pointless and the Align vertically parameter is ignored.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="MarkerDistribAnalysis"></A><A NAME="_Toc23"></A><B>Marker distribution analysis</B></P>
+<P>MapChart can help to study the distribution of different marker categories over the map.
+   This can be useful for selecting <I>e.g.</I> AFLP primer combinations that together
+   provide a good map coverage. There are two possibilities to do so:</P>
+
+<UL>
+<LI>Manually: Give markers of different categories (<I>e.g.</I> different primer combinations)
+    different color codes (which is perhaps most easily done using a spreadsheet),
+	create sufficient colors and set all the color values initially to black
+	(<A HREF="#OptionsColors">Chart options - Colors&amp;Lines</A> page).
+	By setting selected color codes to a contrasting color the distribution
+	of the corresponding marker categories is clearly shown. This method is shown
+	in <A HREF="#Examples">Example 5</A>.</LI>
+<LI>Automatically: If the marker categories can be recognized in part of the
+    marker names, it is possible to give each marker category a different color
+	using the Homologs function. On the first
+	<A HREF="#Homologs">Chart options - Homologs</A> page, check Show Homologs
+	and set the "Compare loci" options to compare the relevant part of the marker
+	names. Check Hilight loci - Font color and select "One color per homologs set".
+	Also, disable the drawing of lines between homologs on different and on the
+	same linkage groups (second Homologs page).<BR>
+    If the number of marker categories is larger than the number of defined
+	color codes, the extra color codes are created but initially all given the
+	same color. Use the
+	<A HREF="#OptionsColors">Chart options - Colors&amp;Lines</A> page to give
+	them each a different color value.</LI>
+</UL>
+
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="DataFormat"></A><A NAME="_Toc24"></A><B>Data format</B></P>
+<P>MapChart reads linkage and QTL data from text files.
+   These files must contain &quot;flat text&quot;, such as produced by a
+   text editor. MapChart cannot read text files in word processor formats.
+   The text is displayed in an editor, which can be used to enter, inspect
+   and modify the data.</P>
+<P>The text containing the map data specifies a sequence of linkage groups.
+   Each linkage group specification consists of a header line, followed by
+   a loci section and optionally a QTLs, Graphs and/or a Segments section.
+   Blank lines and lines containing only comments (i.e. lines where the
+   first non-blank character is &quot;;&quot;) may occur anywhere in the file
+   and are ignored. Comments may also appear behind other information on a line:
+   in that case the &quot;;&quot; must be preceded by blanks.</P>
+<P>It is possible to let MapChart ignore loci or whole linkage groups
+   temporarily by &quot;commenting out&quot; the relevant lines.
+   In order to do so, place the &quot;;&quot; character at the start of all
+   relevant lines; by removing this character the information is made available
+   again.<BR/>
+   <A NAME="CommentLines"></A><A NAME="UncommentLines"></A>The editor provides two
+   functions to quickly &quot;comment&quot; and &quot;uncomment&quot;
+   a whole selection of lines (choose Edit – Comment lines or
+   Edit – Uncomment lines from the main menu).</P>
+<P>Many parameters for controlling different aspects of the chart elements
+   are discussed below. An overview of these codes is available in the file
+   &quot;MapChart formatting codes.rtf&quot; in the MapChart program directory.
+   This file can be read and printed by any word processor.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="LinkageGroupHeader"></A><A NAME="_Toc25"></A><B><I>Linkage group header</I></B></P>
+<P>The specification of a linkage group starts with the linkage group header. The header line of a linkage group starts with the keyword &quot;group&quot; or &quot;chrom&quot; followed by the linkage group name. The name will be shown with upper and lower case characters as entered. If the name contains blanks it must be enclosed by double quotes. If no name is desired, enter &quot;&quot; (two consecutive double quotes) if any of the other options are used.</P>
+<P>After the name the following optional parameters may be supplied, in any order but all on the same line: </P>
+
+<UL>
+<LI>S=&lt;number&gt; (Start position, &lt;number&gt; in cM):
+    set the Start position of the linkage group bar to a point
+	(in centimorgan) before the first locus or QTL</LI>
+<LI>E=&lt;number&gt; (End position, &lt;number&gt; in cM):
+    set the End position of the linkage group bar to a point (in cM)
+	beyond the last locus or QTL</LI>
+<LI><A NAME="VertShift"></A>V=&lt;number&gt; (Vertical shift,
+    &lt;number&gt; in mm or map units): Normally the tops of all linkage
+	group bars are aligned, using the method chosen in the
+	Chart options – Bars dialog. This parameter allows to shift the bars
+	of individual linkage groups up or down by the number of mm specified.
+	Useful for aligning corresponding loci on different linkage groups.
+	If you wish to specify the vertical shift in map units instead of mm,
+	set the "Vertical shift units" option to "map units (cM)" in
+	<A HREF="#OptionsBars">Chart options - Bars</A></LI>
+<LI><A NAME="HorizShift"></A>H=&lt;number&gt; (Horizontal shift,
+    &lt;number&gt; in mm): The default space left of a linkage group chart
+	is set in <A HREF="#OptionsPageLayout">Chart options - Page layout</A>;
+	for individual linkage groups this space can be made smaller or wider
+	by setting this parameter (in mm). Useful for visually grouping linkage
+	groups, or to have a larger space between linkage groups than between
+	segments of the same linkage group.</LI>
+<LI><A NAME="PageBreak"></A>P: Force a page break before this linkage group.
+    Useful for visually grouping linkage groups.</LI>
+<LI>R: Reverse the linkage group vertically, by measuring all locus,
+    QTL and Graph point positions from the linkage group end instead
+	of from the start.</LI>
+<LI><A NAME="Mirror"></A>M: Mirror the location (right vs. left of
+    linkage group bar) of locus names and QTL bars with respect to the
+	current chart options. Useful for pairwise comparison of maps,
+	<I>e.g.</I> of the paternal and maternal map of a linkage group.
+	Note: Graphs will always appear on the right side.</LI>
+<LI><A NAME="AlignVertically"></A>A: Align vertically with the
+    previous linkage group. All consecutive linkage groups with this option
+	and the last preceding linkage group are grouped into an "Aligned group"
+	representing parts of the same chromosome
+	(<A HREF="#Examples">Example2 - formatting</A>; see also
+	<A HREF="#LinkGrpsChrom">Linkage groups versus Chromosomes</A>).
+	The effect is that the chromosome bar,
+	<A HREF="#LocusText">Locus text</A> columns,
+	<A HREF="#QTLsSection">QTL interval bars</A> and
+	<A HREF="#GraphsSection">Graphs</A> of all linkage groups in the
+	Aligned Group are vertically aligned; only the
+	<A HREF="#VertShift">Vertical shift</A> has to be specified for each
+	linkage group, so that they appear under each other without overlapping.
+	The name of the first linkage group is used as the name of the whole
+	Aligned group. Some formatting options are taken from the first
+	linkage group and ignored in the others; these include the
+	<A HREF="#HorizShift">Horizontal shift</A>,
+	<A HREF="#PageBreak">Page break</A> and
+	<A HREF="#Mirror">Mirror</A> options. An Aligned group is treated
+	as one linkage group when showing <A HREF="#Homologs">Homologs</A>
+	and in <A HREF="#CombineMaps">Combine Maps</A>.</LI>
+<LI>B, I and U: toggle the Bold, Italic and Underlined style of the
+    linkage group name font on or off, with respect to the name font
+	specified in <A HREF="#OptionsPageLayout">Chart options - Page layout</A>.</LI>
+<LI>C&lt;number&gt;: set the Color code of the linkage group.
+    This affects the name, linkage group bar, locus positions or intervals,
+	and graph outline and font, and also specifies the default value for
+	locus names, bar segments, QTLs and graph lines and symbols.
+	The color specified by the Color code is defined in
+	<A HREF="#OptionsColors">Chart options - Colors&amp;Lines</A>.
+	The default color code is C1, which is by default set to black.
+	Non-defined color codes use the same color as C1. C0 is the background color.</LI>
+<LI>F0 … F7: set the Fill style for the linkage group bar. The default value
+    is F0 (empty bars). The meaning of the codes is shown in Help – Fill styles.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="LociSection"></A><A NAME="_Toc26"></A><B><I>Loci section</I></B></P>
+
+<P>The names and positions of the loci (or markers) in the linkage group
+   are specified in the Loci section. The loci section starts on the first
+   line after the linkage group header, and continues until the start of
+   the Segments, QTLs or Graphs section or until the next linkage group
+   header. Each locus is defined on one line, which contains the following
+   elements in this order:</P>
+<UL>
+<LI><I>Locus name:</I> Shown with upper and lower case characters as entered.
+    If the name contains blanks it must be enclosed by double quotes.
+	This is not recommended as it makes for confusing charts.</LI>
+<LI><I>Locus position:</I> The loci must be listed in increasing order
+    of position. Negative positions are allowed (useful for adding
+	new loci in front of an existing linkage group)</LI>
+<LI><I>Formatting information (optional):</I> includes the font style
+    (B, I and U) and color code (C&lt;number&gt;) as described under
+	<A HREF="#LinkageGroupHeader">linkage group header</A>.
+	Specific formatting information for loci further includes:</LI>
+
+<UL>
+<LI><A NAME="LocusText"></A>T1, T2 or T3=&lt;text&gt;: extra Text fields.
+    Up to 3 texts can be specified per locus. These are shown in 3 separate
+	columns, if one locus name per line is shown (see
+	<A HREF="#OptionsLoci">Chart Options - Loci</A>;
+	<A HREF="#Examples">Example6 - auto-QTLs</A>). The &lt;text&gt; must be enclosed
+	in double quotes if it contains spaces, or if it starts with ";".</LI>
+<LI>S&lt;number&gt;: the font Size (in points) for the locus name and text.</LI>
+<LI><A NAME="HomologNumber"></A>H&lt;number&gt;: the Homolog number
+    of the locus; this number must be positive or negative, but not 0.
+	Two loci sharing the same positive Homolog number are considered homologs,
+	two loci sharing the same negative Homolog number are considered
+	not to be homologs. This overrules any homology based on similarity
+	of locus names. For a further discussion of homologs see the
+	<A HREF="#Homologs">Chart options - Homologs</A> tab.</LI>
+<LI><A NAME="OmitLocus"></A>O: Omit locus name and position from chart.
+    &quot;Omitted&quot; loci are completely ignored in drawing the charts,
+	except that their position is indicated as a tick in the linkage
+	group bar. Useful to draw skeleton maps showing the positions
+	of all used markers, but only the names of a few selected ones.</LI>
+</UL>
+</UL>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The font and color information
+   affects only the locus name and optional text, not the position or
+   interval length numbers. The default color is the linkage group color
+   (C1 if not set in the linkage group header).</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="SegmentsSection"></A><A NAME="_Toc27"></A><B><I>Segments section</I></B></P>
+<P>Segments of the linkage group bar can be shown highlighted, with a
+   special color or fill style (<A HREF="#Examples">Example3 - homolog matching</A>).
+   These segments are specified in the Segments section.
+   The Segments section starts with a line beginning with the keyword
+   &quot;Segments"; the rest of this line is ignored.
+   The Segments section continues until the start of the QTLs or the
+   Graphs section or until the next linkage group header.
+   Each segment is defined on one line, which contains the
+   following elements in this order:</P>
+
+<UL>
+<LI><I>Start position:</I> given in cM. If the start position is before the start of the linkage group, then the round tip of the bar is filled, otherwise it remains empty.</LI>
+<LI><I>End position:</I> given in cM. If the end position is beyond the end of the linkage group, then the round tip of the bar is filled, otherwise it remains empty.</LI>
+<LI><I>Formatting information (optional):</I> includes color code (C&lt;number&gt;) and fill style (F0 to F7) as described under <A HREF="#LinkageGroupHeader">linkage group header</A>. The default color code is the linkage group color (C1 if not set in the linkage group header); the default fill style is F1 (solid fill).</LI>
+</UL>
+<P>The order in which the segments are defined is not relevant. Also the start and end of a segment may be reversed. The fill style of the linkage group (defined in the linkage group header) should be F0 (default, empty bar), and segments should not overlap, otherwise the printed result may differ from the screen display. </P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="QTLsSection"></A><A NAME="_Toc28"></A><B><I>QTLs section</I></B></P>
+<P>Along the linkage group map, bars can be drawn that show the extent of QTL support intervals. These QTL bars are specified in the QTLs section. The QTLs section starts with a line beginning with the keyword &quot;QTLs&quot;; the rest of this line is ignored. The QTLs section continues until the start of the Segments or Graphs section or until the next linkage group header. Each QTL is defined on one line. QTLs can be specified in two ways: as <A HREF="#QTLsSpecified">fully specified QTLs</A> or as <A HREF="#QTLsAuto">Auto QTLs</A>.</P>
+
+<P><A NAME="QTLsSpecified"></A><I><U>Fully specified QTLs</U></I></P>
+
+<UL>
+<LI><I>QTL name:</I> Shown with upper and lower case characters as entered.
+    If the name contains blanks it must be enclosed by double quotes.</LI>
+<LI><I>QTL intervals:</I> For each QTL two intervals are specified:
+    an outer (e.g. 2-LOD) and an inner (e.g. 1-LOD) interval.
+	The positions of these intervals are specified in the following order:
+	Start of outer interval, Start of inner interval, End of inner interval,
+	End of outer interval, in increasing order
+	(<A HREF="#Examples">Example4 - QTLs and split map</A>).<BR>
+    If you want to show only the outer or only the inner interval,
+	specify a zero length for the other one: Let a be the start and
+	b the end of the interval you want to show. To show only an outer
+	interval, enter the values a, a, a, b; to show only an inner interval
+	enter a, a, b, b.</LI>
+<LI><I>Formatting information (optional):</I> includes the font style
+    (B, I and U), color code (C&lt;number&gt;) and fill style (F0 … F7)
+	as described under <A HREF="#LinkageGroupHeader">linkage group header</A>.
+	The default color code is the linkage group color (C1 if not set
+	in the linkage group header); the default fill style is F1 (solid fill).
+	Further formatting for QTLs includes:</LI>
+
+<UL>
+<LI>L0 … L5: line style for the outer interval.
+    See Help – Line styles; default value is L1 (solid lines).</LI>
+<LI>W: Wide (bold) lines. The width of normal and wide lines is specified
+    on the <A HREF="#OptionsLineWidth">Chart options - Colors&amp;Lines</A>
+	tab.</LI>
+</UL>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="QTLsAuto"></A><I><U>Auto QTLs</U></I></P>
+<P>Auto QTLs are derived from a graph (see next section and
+   <A HREF="#Examples">Example6 - auto-QTLs</A>) with exactly the same name.
+   An Auto QTL is located around the graph maximum, with the inner
+   and outer intervals extending to the positions where the graph
+   falls below the maximum minus the &quot;inner threshold&quot;
+   and the &quot;outer threshold&quot; respectively.</P>
+<P>A line specifying an Auto QTL is composed of the following elements:</P>
+
+<UL>
+<LI><I>QTL name:</I> Shown with upper and lower case characters as entered.
+    If the name contains blanks it must be enclosed by double quotes.
+	A graph with exactly the same name must be specified in the
+	<A HREF="#GraphsSection">Graphs section</A>.</LI>
+<LI><I>The key word &quot;auto&quot;</I>, without quotes.</LI>
+<LI><I>Inner and Outer thresholds:</I> to obtain an inner 1-LOD
+    and an outer 2-LOD interval specify 1 and 2 respectively.
+	Thresholds must be equal to or larger than 0 and the outer
+	threshold must be equal to or larger than the inner threshold</LI>
+<LI><I>Formatting information (optional):</I> includes the font style
+   (B, I and U), color code (C&lt;number&gt;) and fill style (F0 … F7)
+   as described under <A HREF="#LinkageGroupHeader">linkage group header</A>.
+   The default color code is the linkage group color (C1 if not set in the
+   linkage group header); the default fill style is F1 (solid fill).
+   Further formatting for QTLs includes:</LI>
+
+<UL>
+<LI>L0 … L5: line style for the outer interval. See Help – Line styles;
+    default value is L1 (solid lines). </LI>
+<LI>W: Wide (bold) lines. The width of normal and wide lines is specified
+    on the <A HREF="#OptionsLineWidth">Chart options - Colors&amp;Lines</A> tab.</LI>
+</UL>
+</UL>
+<P>The order in which the QTLs are specified is important. If a QTL fits 
+   behind the previous QTL (<I>i.e.</I> it starts at a higher map position 
+   than the previous QTL ends, and the names do not overlap), then they are 
+   placed in the same <A NAME="QTLBand"></A>&quot;QTL band&quot;: a vertical 
+   column of QTLs. Otherwise a new QTL band is started, one step further 
+   from the linkage group bar 
+   (<A HREF="#Examples">Example4 - QTLs and split map</A>). </P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="GraphsSection"></A><A NAME="_Toc29"></A><B><I>Graphs section</I></B></P>
+<P><A NAME="YaxisFormatting"></A>On the right side of the linkage group map,
+   graphs can be drawn that show how some parameter (<I>e.g.</I> a QTL LOD
+   value) varies along the map (<A HREF="#Examples">Example6 - auto-QTLs</A>).
+   These graphs are specified in the Graphs section. The Graphs section
+   starts with a line beginning with the keyword &quot;Graphs&quot;.
+   The rest of this line is used to specify the Y-axis formatting
+   and can contain the following elements:</P>
+
+<UL>
+<LI>L=&lt;number&gt;: the Low limit of the Y-axis;
+    ignored if larger than the minimal value of any of the graphs</LI>
+<LI>H=&lt;number&gt;: the High (upper) limit of the Y-axis;
+    ignored if smaller than the maximal value of any of the graphs</LI>
+<LI>S=&lt;number&gt;: the Step size (tick interval) of the Y-axis</LI>
+<LI>D=&lt;number&gt;: the number of decimals shown</LI>
+</UL>
+
+<P><A NAME="GraphsData"></A>The Graphs section continues until
+   the start of the QTLs or Segments section or until the next
+   linkage group header. Each line in the Graphs section specifies
+   either a <I>constant</I> (a line with constant Y value over the
+   length of the linkage group) or a <I>graph</I>.</P>
+<P>A <I>graph</I> is defined on one line, which contains the
+   following elements in this order:</P>
+
+<UL>
+<LI><I>Graph name:</I> Shown with upper and lower case characters
+    as entered. If the name contains blanks it must be enclosed by
+	double quotes. Graphs without name will not be shown in the legend;
+	in that case the name must be specified as &quot;&quot;
+	(two consecutive double quotes without space between).</LI>
+<LI><I>Graph file name:</I> the file with the coordinates of the points.
+    If the graph file is not in the same directory as the MapChart file
+	a path must be included. File names including spaces must be enclosed
+	by double quotes. The format of the <A HREF="#GraphFiles">Graph file</A>
+	is outlined below.</LI>
+<LI><A NAME="GraphsFormatting"></A><I>Formatting information (optional):</I>
+    includes the font style (B, I and U) for the legend entry, and color
+	code (C&lt;number&gt;) as described under
+	<A HREF="#LinkageGroupHeader">linkage group header</A>.
+	The default color code is the linkage group color (C1 if not set
+	in the linkage group header). Further formatting for graphs includes:</LI>
+
+<UL>
+<LI>L0 … L5: line style. See Help – Line styles; default value is L1
+    (solid lines). Lines can be suppressed by specifying L0.</LI>
+<LI>S0 … S9: symbol style. See Help – Symbol styles; default value is S1
+    (solid squares). Symbols are shown only at the points as specified
+	in the <A HREF="#GraphFiles">Graph file</A>.
+	With S0, no symbols are shown.</LI>
+<LI><A NAME="GraphGroupname"></A>G=&lt;linkage group name&gt;:
+    specifies the linkage group to read from the
+	<A HREF="#GraphFiles">Graph file</A>; by default the name
+	of the current linkage group is used. This is useful if the
+	linkage group names in the Graph file are different from the
+	names in the MapChart file. Note that group names should be
+	exactly identical, upper/lower case relevant.</LI>
+<LI><A NAME="GraphWideLine"></A>W: Wide (bold) line. The width of normal
+    and wide lines is specified on the
+	<A HREF="#OptionsLineWidth"></A>Chart options - Colors&amp;Lines tab.</LI>
+<LI><A NAME="ColumnTitles"></A>T=&lt;column title&gt;: specifies
+    which column in the <A HREF="#GraphFiles">Graph file</A> to use
+	for the function values; if omitted, the &quot;LOD&quot; column
+	is used by default
+	(see <A HREF="#MapQTLgraphFiles">MapQTL data files</A> to see
+	the default in that case). The column name can be entered in upper
+	or lower case; it may not contain spaces.</LI>
+</UL>
+</UL>
+
+<P>A <I>constant</I> (e.g. indicating a LOD threshold value) is similarly
+   defined on one line, as follows:</P>
+
+<UL>
+<LI><I>The keyword "const"</I></LI>
+<LI><I>The Y value</I></LI>
+<LI><I>Formatting information (optional):</I> exactly as for a graph.
+    The T parameter is of course meaningless for a constant.</LI>
+</UL>
+
+<P>The keywords (&quot;group&quot;, &quot;chrom&quot;, &quot;segments&quot;,
+   &quot;QTLs&quot;, &quot;graphs&quot;, &quot;auto&quot;, "const")
+   and the formatting information can be entered in upper or lower case.
+   All names, texts etc. are shown with upper and lower case characters
+   as entered.</P>
+<P><A HREF="#Examples">Examples</A> of MapChart files showing and
+   explaining all these options are installed in the
+   MapChart\Examples directory.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="GraphFiles"></A><A NAME="_Toc30"></A><B>Graph files</B></P>
+<P>Graph files contain the coordinates of all the points specifying graph
+   lines. From version 2.2 the format of graph files has been extended to
+   allow data for multiple linkage groups to be specified in the same file,
+   which should reduce the clutter of files.</P>
+<P>A Graph file starts with a line of column titles; subsequent lines contain
+   the values for a series of points (in order of increasing map position,
+   and grouped per linkage group). MapChart uses the value in column
+   &quot;cM&quot;, &quot;map&quot; or &quot;position&quot; as the
+   map position of the point, and by default the value in the column
+   &quot;lod&quot; as the function value. If present, the column
+   &quot;group&quot; lists the linkage groups; this is needed in files
+   containing data for multiple linkage groups.
+   If a value (or any text) is present in the last column, a symbol is
+   shown at that point in the graph. Instead of the &quot;lod&quot; column,
+   any other column title may be specified for the function value, using
+   the <A HREF="#ColumnTitles">T=&lt;column title&gt;</A> formatting option
+   of the graph. In this way, one graph file can define multiple graphs,
+   each specified using a different column title. Using the
+   comment character (&quot;;&quot;), comments may be added at the end
+   of a line or between lines.</P>
+<P>The keywords &quot;cM&quot;, &quot;map&quot;, &quot;position&quot;
+   and &quot;group&quot;, and the column name for reading the Y-values
+   are not case-sensitive. In contrast, the name of the linkage group
+   listed in the &quot;group&quot; column must be exactly identical to
+   the name of the linkage group in the MapChart file. If the group names
+   in the Graph file are different from those in the MapChart file, the
+   <A HREF="#GraphGroupname">G=&lt;groupname&gt;</A> option can be used
+   to specify which group name to read from the graph file.</P>
+<P>Graphs may contain points with map positions beyond the linkage group
+   start or end, but only the part between the linkage group start and end
+   will be shown. Points with function values outside the specified Low
+   or High ends of the <A HREF="#YaxisFormatting">Y-axis</A> will cause
+   the Y-axis range to be extended. Further, if the file does not contain
+   a &quot;group&quot; column, or if only one group name occurs in this
+   column (even if different from the linkage group where this graph
+   belongs), all the lines of the file are read.</P>
+<P>For compatibility with earlier MapChart versions, the line of column
+   titles may be omitted. In that case the first column should contain
+   the map positions, the second column the function values, and if a
+   third number or text is present on a line a symbol will be shown at
+   that point. Such files define a graph for a single linkage group.</P>
+<P><A NAME="MapQTLgraphFiles"></A>MapChart can read the output of
+   MapQTL 3.0 and 4.0, as exported using the &quot;Copy text&quot; command,
+   and the output of MapQTL 5.0 and 6.0 as exported using the
+   &quot;Export to File&quot; command. By default, MapChart will use the
+   &quot;LOD&quot; column for function values in the case of Interval
+   mapping or MQM mapping, and the &quot;K*&quot; column in the case of
+   Kruskal-Wallis analysis. Don’t edit the MapQTL files, e.g. by adding
+   lines, columns or comments, else the format may not be recognized.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="ChartOptions"></A><A NAME="_Toc31"></A><B>Chart options</B></P>
+<P>The &quot;Chart options&quot; item on the Tools menu or toolbar displays
+   the Chart options form, which is divided into several pages:
+   <A HREF="#OptionsPageSize">Page size</A>,
+   <A HREF="#OptionsTitleFooter">Title&amp;Footer</A>,
+   <A HREF="#OptionsPageLayout">Page layout</A>,
+   <A HREF="#OptionsColors">Colors&amp;Lines</A>,
+   <A HREF="#OptionsBars">Bars</A>,
+   <A HREF="#OptionsLoci">Loci</A>,
+   <A HREF="#OptionsQTLs">QTLs&amp;Graphs</A> and
+   <A HREF="#Homologs">Homologs</A>.</P>
+
+   <P><A NAME="OptionsPageSize"></A><A NAME="_Toc32"></A><B><I>Page size</I></B></P>
+<P>MapChart produces output in the form of one or more pages. In the region inside the margins a chart title may be shown at the top. Below the chart title, one or more linkage group maps are drawn side by side. The printed output consists of the pages with the specified margins; the produced metafiles (and the page images copied to the Clipboard) only contain the rectangular region containing the charts, excluding the page margins. Use the Page size tab to specify the paper size and orientation, and the page margins.</P>
+
+<UL>
+<LI>Paper size: Choose from three pre-defined paper sizes, or define a custom size, and select the page orientation.</LI>
+<LI>Margins: an error message will appear if the area inside the margins becomes too small.
+    Also, if you intend to print the charts, take into account the unprintable margins of the printer.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsTitleFooter"></A><A NAME="_Toc33"></A><B><I>Title&amp;Footer page</I></B></P>
+<P>Optionally, a chart title and a footer can be shown on the pages.
+   On the Chart options - Title&amp;Footer tab, the following options can be set.</P>
+
+<UL>
+<LI><A NAME="Title"></A>Chart title: If no title is entered, no space is reserved for the title and the "title bottom margin" (see below). The chart title, if entered, can appear on the first or on all pages, and can optionally be followed by the page number. </LI>
+<LI>Title font button: Shows a font dialog. The chart title is shown in the selected font, using the default color (color code 1, black if not changed)</LI>
+<LI>The title bottom space is the space separating the chart title from the top of the linkage group names.</LI>
+<LI>Footer: the items to appear at the left, center and right position can be selected. If all three are set to "none", no footer will be shown and more space is available for the charts.</LI>
+<LI>Footer font button: Shows a font dialog for the footer</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsPageLayout"></A><A NAME="_Toc34"></A><B><I>Page layout page</I></B></P>
+<P>In the area between the title and the footer the linkage group maps are shown side by side. Directly below the chart title is a region where the names of all linkage groups appear, and below that is the "Chart area". The Chart area contains the linkage group bars and all surrounding objects such as the loci, QTL bars and graphs. </P>
+<P>On the Chart options - Page layout tab, the following options can be set.</P>
+
+<UL>
+<LI><A NAME="TitleOptions"></A>Names font button: Shows a font dialog for the
+    names of the linkage groups.
+    For individual linkage groups the font style options (Bold, Italic an
+	Underline) can be changed by adding the B, I or U options (see
+	<A HREF="#LinkageGroupHeader">linkage group header</A>)</LI>
+<LI>The names bottom space is the space separating the linkage group names
+    from the top of the chart area. In this space no bars or other chart
+	objects will appear.</LI>
+<LI>Multiple linkage groups per page: if unchecked, each page will contain
+    only one linkage group chart. If checked, the default horizontal spacing
+	of charts must be specified in mm; this can be changed for individual
+	linkage groups (see <A HREF="#LinkageGroupHeader">linkage group header</A>)</LI>
+<LI>Width of linkage groups: The space reserved for the linkage group can be
+    the actual width of the chart, the width of the widest chart, or a
+	specified width. If the second or third options are chosen, and both
+	locus names and QTL bars are set to appear on the right side of the
+	linkage group bars (see below), then the bars are spaced equally on the
+	page.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsColors"></A><A NAME="_Toc35"></A><B><I>Colors&amp;Lines page</I></B></P>
+<P>In MapChart a color palette is used to specify the colors of the
+   different chart elements. On this page the number of colors in the
+   palette is set, and the actual colors used for each color code are
+   defined. Codes C0 to C10 are pre-defined, but these can be deleted
+   (except codes 0 and 1), changed, or extra color codes can be defined.
+   It is possible to define a large number of extra color codes,
+   which initially all get the same color value (see 
+   <A HREF="#AddColorRange">Add range</A>). This may be useful
+   when dealing with many categories of loci (e.g. AFLP markers based
+   on many different primer combinations): assign each category its own
+   color code, but assign the same color value to all these codes.
+   To highlight the loci of one particular category, just change the
+   color value of its color code 
+   (<A HREF="#Examples">Example5 - marker highlighting and footer</A>).</P>
+
+<UL>
+<LI>Current color: select the color code to change or delete</LI>
+<LI>Change current: displays a color dialog to select a new value 
+    for the current color code</LI>
+<LI>Delete from current: deletes all codes from the current to the end 
+    of the list. Codes 0 (background) and 1 (default) cannot be deleted.</LI>
+<LI>Add one: Adds a new color code to the end of the list, and displays 
+    a color dialog to specify a color for the new code</LI>
+<LI><A NAME="AddColorRange"></A>Add range: displays the &quot;Add color range&quot; 
+    dialog, to add a range of new color codes to the end of the list. 
+    The new color codes all get the same color value, which can be either 
+    selected from the already defined color codes, or specified through a 
+    color dialog</LI>
+<LI>Background transparent: the background can either be transparent 
+    (default, useful for placing the map chart over a background picture) 
+    or can be set to a particular color. If a transparent background is 
+    selected, the on-screen image shows the &quot;paper&quot; in the 
+    selected background color. To show white graphics on a transparent 
+    background, choose a dark background color; this will not be included 
+    in the metafile image but the graphics will be visible on-screen.</LI>
+</UL>
+
+<P>Also on this page the <A NAME="OptionsLineWidth"></A>width of
+   normal and wide (bold) lines can be set. Note that these will be
+   approximations: depending on the resolution of your printer usually
+   the specified line widths will be equivalent to only few pixels.
+   Most lines in the charts are "normal"; some line can be specified as
+   wide, including
+   <A HREF="#IndicatorsHighlight">indicators of highlighted loci</A>,
+   QTLs, graph lines and connections between homologs.</P>
+<P>Default widths are 0.2 and 0.5 mm for normal and wide lines respectively;
+   maximum values are 1 and 2 mm; wide lines must be at least as wide as
+   normal lines. All lines will be at least one pixel wide.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsBars"></A><A NAME="_Toc36"></A><B><I>Bars page</I></B></P>
+<UL>
+<LI>Height of chart area: the result of Chart options - Page size (paper size, paper orientation, page margins) and Chart options - Page layout (chart title font, title bottom margin, linkage group names font and bottom margin). The height of the chart area is displayed as an aid in deciding the position and size of the linkage group bars.</LI>
+<LI><A NAME="AlignHoriz"></A>Alignment: By default, the tops of the
+    linkage group bars are aligned at the same height.
+	If the linkage groups start with different map positions it is
+	possible to align the groups with corresponding map positions at
+	the same height.</LI>
+<LI>Tops position: either the longest bar is centered vertically in the
+    chart area, or the position of the top of the linkage group bars
+	(relative to the top of the chart area) can be specified.
+	The second option is most useful for drawing maps from different
+	datafiles with the same layout. The tops of all linkage group bars
+	are aligned by default; individual linkage groups can be shifted
+	up or down (see <A HREF="#LinkageGroupHeader">linkage group header</A>).</LI>
+<LI>Vertical shift units: the <A HREF="#VertShift">Vertical shift</A>
+    specified in the linkage group header can be expressed in mm or
+	in map units.</LI>
+<LI>Bar length: either the length of the longest bar or the scale
+   (in mm per cM) can be specified. The second option is useful for
+   drawing maps from different datafiles to the same scale.</LI>
+<LI><A NAME="IndicatorsHighlight"></A>Highlight indicators:
+    if a locus name is highlighted in any way (by specifying different
+	font attributes, font size or color), the indicator connecting it
+	to the linkage group bar can be shown bold and/or in the color of
+	the locus name. This works also if the locus is highlighted because
+	it is a <A HREF="#Homologs">homolog</A> of another locus.
+	If these options are checked, the indicator of a cluster of loci
+	is highlighted if any locus in that cluster is highlighted, and it
+	gets the color of the <I>last</I> highlighted locus in the cluster.
+	(The Bold attribute of the indicators may not be visible in the
+	full-page view; it is always visible at the highest zoom level and
+	on the printed page).</LI>
+<LI>Indicator size: the horizontal size of the lines connecting the
+    positions and the locus names to the linkage group bar.</LI>
+<LI>Bar width (in mm): the width of the linkage group bar.</LI>
+<LI><A NAME="SplitMap"></A>Split map interval: if set to 0 linkage groups
+    won’t be split up; otherwise linkage groups longer than the interval
+	specified here will be divided into segments and drawn as if they were
+	separate linkage groups, with a number added to the original linkage
+	group name. QTL bars and Graphs will also be split up
+	(<A HREF="#Examples">Example4 - QTLs and split map</A>).</LI>
+<LI>Round tips: when checked, the linkage group bars have round tips,
+    otherwise flat tips. Note: if the linkage group is split into segments
+	(see previous option), only the start and end of the whole linkage group
+	will show a round tip when this option is checked.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsLoci"></A><A NAME="_Toc37"></A><B><I>Loci page</I></B></P>
+
+<UL>
+<LI>Locus font button: shows a font dialog. The style options (Bold, Italic and Underline) can be changed for <I>individual</I> loci by adding the B, I or U options in the locus lines in the Data page. </LI>
+<LI>Locus name position: the locus names can be shown on the left or the right side of the linkage group bar; the position information will appear on the opposite side. </LI>
+<LI>Locus names per line: in case more than one locus occurs at the same (rounded) position, all the loci of the cluster are printed in one group. Here the number of loci per line in a cluster is specified. The more loci per line, the easier it will be to fit the chart within the available chart height, but the wider the chart will become. If 0 is entered, no locus names are shown.</LI>
+<LI>Show locus texts: Optionally a text can be specified for each locus
+    (see <A HREF="#LociSection">Data format - Loci</A> section).
+	These text will only be shown if this checkbox is checked,
+	and only if one locus name per line is shown (see previous option).<BR/>
+	Locus texts can be useful e.g. to indicate the coupling phase of
+	dominant markers, the significance of skewed segregation or of QTL effects etc.</LI>
+<LI><A NAME="TextLocusStyle"></A>Text in locus style:
+    By default all locus texts are shown in the standard locus font,
+	without the special formatting of the locus name.
+	By checking this option, the formatting of each locus name is also
+	applied to its locus texts.</LI>
+<LI>Positions: There are five options: positions of loci can be omitted, the absolute positions, interval lengths or ticks at fixed intervals can be shown along the linkage group bar, or a ruler can be shown at the left side of the page.</LI>
+<LI>Decimals: the number of decimals (0-5) used for printing positions and for rounding positions to group loci into clusters (see above).</LI></UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="OptionsQTLs"></A><A NAME="OptionsQTLsGraphs"></A><A NAME="OptionsGraphs"></A>
+         <A NAME="_Toc38"></A><B><I>QTLs&amp;Graphs page</I></B></P>
+<P><U>QTL options:</U></P>
+<UL>
+<LI>QTL font: the QTL font name, font size (in points) and font style can be set here. A sample with the current chart options is shown. The font style options (Bold, Italic and Underline) can be changed for <I>individual</I> QTLs by adding the B, I or U options in the QTL lines in the Data page. </LI>
+<LI>Suppress names: if checked only the QTL bars are shown, not the QTL names. Note that the QTL font size still has an effect on the spacing of the QTL bars even if the names are not shown.</LI>
+<LI>QTL bar width (in mm): the width of the QTL bars.</LI>
+<LI>Suppress names: if checked, no names are drawn at the QTL bars.</LI>
+<LI>Show dashes at ends: at the ends of the lines representing the outer interval, a terminal cross-dash can be shown.</LI>
+<LI>QTL position: the QTL bars can be shown on the left or the right side of the linkage group bar. </LI>
+</UL>
+<P><U>Graph options:</U></P>
+<UL>
+<LI>Y-axis scaling: selects if the Y-axis of all graphs should have the same length (in mm) or the same scale (in mm per scale unit)</LI>
+<LI>Y-axis font button: shows a font dialog. The font is used for the numbers along the Y-axis.</LI>
+<LI>Round positions of points: the X (cM) coordinates of all points can be rounded, just as the positions of loci and QTLs or they can be drawn exactly as entered. Rounding is useful to exactly align loci and symbols in graphs but may sometimes cause jagged graphs.</LI>
+<LI><A NAME="LegendOptions"></A>Legend font button: shows a font dialog. The style options (Bold, Italic and Underline) can be changed for <I>individual</I> graphs by adding the B, I or U options in the graph lines in the Data page.</LI>
+<LI>Show graph legend: if checked, a legend is shown after the last linkage group chart. The legend will omit any graphs without a name.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="Homologs"></A><A NAME="_Toc39"></A><B><I>Homologs pages</I></B></P>
+<P>MapChart can highlight homologies between loci. Loci can be grouped into
+   homologs groups based on similarity of their names, and/or based on their
+   <A HREF="#HomologNumber">homolog number</A> which can be specified on the
+   Data sheet. Each locus can be part of only one homologs group.
+   Loci in the same group are shown in the same color and connected by lines,
+   if these options are selected.</P>
+<P>If the &quot;Match locus names&quot; checkbox (see below) is NOT checked,
+   loci with the same homolog number are grouped together.
+   If the &quot;Match locus names&quot; checkbox is checked,
+   the loci are grouped in the first place based on name similarity.
+   Further, loci that you wish to remove from such a group you can give a
+   NEGATIVE homolog number (if you give several loci the same negative
+   homolog number, they will form a new group).
+   If you want to add extra loci to a group, give the same POSITIVE
+   homolog number to those loci and to one or more of the loci already
+   in the group.</P>
+<P>The <A HREF="#CombineMaps">Combine Maps</A> tool makes it easy to
+   place corresponding linkage groups from different files side by side,
+   so that homologies can be clearly shown.</P>
+<P>The options on these pages specify how to show homologs:</P>
+
+<UL>
+<LI>Show homologs: if unchecked, no homologies are shown and the rest
+    of these pages are not relevant.</LI>
+<LI>Compare loci: If the "Match locus names" checkbox is checked,
+    loci are recognized as homologous if the specified part of their names
+	is identical, possibly ignoring upper/lowercase differences.
+	The default setting "Ignore last 0 characters" only recognizes
+	completely identical names as homologs. See the beginning of this
+	paragraph about how <A HREF="#HomologNumber">homolog numbers</A>
+	influence this grouping.</LI>
+<LI>Highlight loci: The names of homologous loci can be highlighted.
+    If the Font style, Font size and/or Font color checkboxes are checked,
+	the specified formatting is used for homologous loci, overruling the
+	corresponding formatting specified on the Data page. If these three
+	checkboxes are left unchecked (default), locus names are not highlighted.
+	If Font color is checked, you can further choose to show all homologs
+	in the same color or to use a different color for each homologs group.
+	In the last case, color codes 2 and up are used for the homologs groups.
+	If there are more groups than color codes, the extra necessary color
+	codes are generated but they will initially all receive a gray color value.
+	You will receive a warning that you need to specify the desired color
+	values for these extra color codes afterwards (see the Chart options -
+	<A HREF="#OptionsColors">Colors&amp;Lines</A> page).</LI>
+<LI>Connections between linkage groups: Connections are the lines connecting two homologs. They can be shown only between adjacent linkage groups or between all linkage groups on the same page.</LI>
+<LI>Connections within linkage groups: Connections can also be shown between homologous loci on the same linkage group. These connections have the form of a half ellipse and can be shown on the left or right side of the linkage group bar. "Width of curve" specifies how wide the half ellipses are at their midpoints.</LI>
+<LI>Connection style: A connection between homologous loci consists of
+    a line with a "dot" at each end, at the positions of the loci
+	(or clusters of loci) on the linkage groups. <BR>
+    The size and color of the dots, and the line style can be specified.
+	A dot size of 0 mm hides the dot; line style "no line" hides the line.
+	The lines can be drawn in normal width or bold. Further, the lines can
+	either all have the same color: the color of the dots,
+	or a different color per homologs group, or a different color per pair
+	of linkage groups. In the second case, if a line connects clusters with
+	several homologs groups, the line will be drawn as several parallel lines
+	in the different colors (it may be necessary to choose Bold
+	lines to see this clearly). <BR>
+    As described above under Highlight loci, in the last two cases color
+	codes 2 and up are used. If there aren’t enough color codes,
+	the extra necessary color codes are generated but they will initially
+	all receive a gray color value. You will need to specify the desired
+	color values for these extra color codes afterwards (see the Chart options
+	- <A HREF="#OptionsColors">Colors&amp;Lines</A> page).<BR>
+	If the two homologous loci are on different pages,
+	the dots are drawn but the line is omitted.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P>The OK button will accept the new chart options, the Cancel button reverts to the old chart options. Further the "Defaults" button will open the <A NAME="DefaultChartOptions">default chart options </A>dialog. Here the current chart options can be saved as defaults: this means that they will be applied to new files and to imported map files. Also, the current chart options can be replaced by the previously saved default options or by the original (pre-set) chart options. The chart title will not be saved or replaced in these cases. </P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="MenuStructure"></A><A NAME="_Toc40"></A><B>Menu structure and Keys</B></P>
+<P>The main Menu has the following submenus: <A HREF="#FileMenu">File menu</A>,
+   <A HREF="#EditMenu">Edit menu</A>, <A HREF="#ChartMenu">Chart menu</A>,
+   <A HREF="#ToolsMenu">Tools menu</A>,
+   <A HREF="#WindowsMenu">Window menu</A> and
+   <A HREF="#HelpMenu">Help menu</A>.</P>
+
+<P><A NAME="FileMenu"></A><A NAME="_Toc41"></A><B><I>File menu</I></B></P>
+
+<UL>
+<LI><U>New</U> <I>(Ctrl-N)</I></LI>
+<LI><U>Open</U> <I>(Ctrl-O)</I> : Use the File Open dialog to open a MapChart
+    datafile (*.mct) or to import a MapChart 1.x or plain map file (both *.map)</LI>
+<LI><U>Save</U> <I>(Ctrl-S)</I> and <U>Save as</U>: Save a MapChart datafile
+    (*.mct). Chart files (enhanced metafiles, *.emf) are saved using the
+	Chart menu – Export command.</LI>
+<LI><A NAME="ExportMapFile"></A><U>Export Map datafile</U>: Exports only
+    the information acceptable in a bare map file for use in <I>e.g.</I>
+	MapQTL: the linkage group names, locus names and positions.
+	All formatting information, the QTLs, Graphs and Segments sections,
+	and the Chart options are omitted.</LI>
+<LI><U>Close</U>: close only current map</LI>
+<LI><A name="PrintData"></A><U>Print data</U> <I>(Ctrl-P)</I> : This prints
+    the Data page; to print charts, use the Chart menu – Print command</LI>
+<LI><U>Exit</U> <I>(Alt-F4)</I></LI>
+<LI><U>1</U> – <U>5</U>: up to 5 most recently used files</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="EditMenu"></A><A NAME="_Toc42"></A><B><I>Edit menu</I></B></P>
+<P>The Edit menu is only available when the Data page of the current map is showing.</P>
+
+<UL>
+<LI><U>Cut</U> <I>(Ctrl-X)</I>, <U>Copy</U> <I>(Ctrl-C)</I>,
+    <U>Paste</U> <I>(Ctrl-V)</I>, <U>Find</U> <I>(Ctrl-F)</I> and
+	<U>Replace</U> <I>(Ctrl-H)</I></LI>
+<LI><U>Comment lines</U> and <U>Uncomment lines</U>: Add or remove a
+    comment character (&quot;;&quot;) at the front of the selected line(s).
+	Useful to quickly and temporarily exclude part of the data.</LI>
+</UL>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="ChartMenu"></A><A NAME="_Toc43"></A><B><I>Chart menu</I></B></P>
+<P>The Chart menu is only available when the Chart page of the current map is showing.</P>
+
+<UL>
+<LI><U>First page</U> <I>(Ctrl-PgUp)</I>, <U>Previous page</U> <I>(PgUp)</I>, <U>Next page</U> <I>(PgDn)</I> and <U>Last page</U> <I>(Ctrl-PgDn)</I>&nbsp;: for navigating through the chart pages</LI>
+<LI><U>Zoom in</U> <I>(+)</I>, <U>Zoom out</U> <I>(-)</I></LI>
+<LI><U>Copy page</U> <I>(Ctrl-C)</I>, <U>Export Metafiles</U> <I>(Ctrl-E)</I>
+    and <U>Export Bitmaps</U>: see <A HREF="#Export">Exporting charts</A></LI>
+<LI><A name="PrintCharts"></A><U>Print pages</U> <I>(Ctrl-P)</I>:
+    use the print dialog to select which pages to print.
+	If the selected printer resolution is different from that used when
+	drawing the charts, the charts will be recalculated.<BR/>
+	Even if printing is cancelled charts will be recalculated according
+	to the selected printer resolution; this may be used to adjust the
+	resolution of the exported charts</LI>
+</UL>
+
+<P><A NAME="CursorKeys"></A>Additionally the following key combinations
+   are available for moving around the current chart page: <I>arrow keys</I>
+   for small jumps, <I>Ctrl-arrow keys</I> for large jumps,
+   <I>Home</I> to left side, <I>End</I> to right side,
+   <I>Ctrl-Home</I> to top-left corner,
+   <I>Ctrl-End</I> to bottom-right corner.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="ToolsMenu"></A><A NAME="_Toc44"></A><B><I>Tools menu</I></B></P>
+<P><I><U>Chart options</U></I></P>
+<P>Use this menu item, the Chart options button or <I>Ctrl-T</I> to open the
+   <A HREF="#ChartOptions">Chart options</A> dialog</P>
+
+<P><I><U>Use default options</U></I></P>
+<P>Replace all current options by their default values, if defaults 
+   have been set previously, and else by their original (built-in) values.</P>
+
+<P><I><U>Use original options</U></I></P>
+<P>Replace all current options by their original (built-in) values.</P>
+
+<P><I><U>Set default options ...</U></I></P>
+<P>Save the current chart options as default options in a file named
+   MapChart.mct. These options will be used for new maps and can
+   also be applied to existing MapChart projects using
+   the Tools menu item <I>Use default options</I>.</P>
+
+<P><A NAME="Update"></A><I><U>Update</U></I></P>
+<P>A facility to update a newly imported map with formatting from a
+   previous map. Useful when a map has been recalculated or new loci
+   have been added, and you want to apply the formatting of a previous
+   version of the map to the new map. When selecting this command,
+   the target map (the new map which must receive the formatting) must
+   be the active map, and the source map (the older version, where the
+   formatting must come from) must also be open. Use the dialog to specify
+   which map is the source map, and which items to copy from the source map:<BR>
+   <I>Linkage group:</I> copy from the source linkage group
+   <I>with the same name</I> the formatting, comment, QTLs, Graphs and
+   Bar segments; the last three items only if they are not present in
+   the target linkage group. <BR>
+   <I>Loci:</I> copy from the locus <I>with the same name</I> the
+   formatting and comment. If the locus in the source map is present
+   in the same linkage group (with the same name), then that locus is
+   used as source; else the source map is searched from the start for
+   the first locus with the same name.<BR>
+   <I>Chart options: </I>copy all the Chart options, including or
+   excluding the chart title of the source map.</P>
+
+<P><A NAME="CombineMaps"></A><I><U>Combine maps</U></I></P>
+<P>This tool takes two or more open map files and produces a new map
+   with first all the first linkage groups of the original maps,
+   then all the second groups etc.<BR/>
+   Useful to compare maps and show <A HREF="#Homologs">homologies</A>
+   between maps, or to combine separate maternal and paternal maps.</P>
+
+<P><A NAME="Recalculate"></A><I><U>Recalculate</U></I></P>
+<P>Use to recalculate the charts when the graph files have been changed.
+   After changes in the map data on the Data page, the charts are
+   recalculated automatically.</P>
+
+<P><A NAME="Autofit"></A><I><U>Autofit</U></I></P>
+<P>If the charts don’t fit on the page, use the Autofit utility
+   to search for a suitable new combination of Chart options.
+   Autofit is automatically used the first time the charts are drawn
+   (the first drawing of a New map, or the first drawing after opening
+   a file) if the current Chart options don't allow the chart to be drawn.
+   Autofit will only check out the Chart options; if the problem is caused
+   by formatting of the data (<I>e.g.</I> a too large vertical shift of
+   the linkage group bars) then Autofit won’t be able to solve this.</P>
+
+<P><A NAME="DataFont"></A><I><U>Data font</U></I></P>
+<P>Use the Data Font dialog to set the font used on the Data page.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><A NAME="WindowsMenu"></A><A NAME="_Toc45"></A><B><I>Window menu</I></B></P>
+<P>MapChart can open multiple maps at the same time; use the Window menu to
+   select and arrange the maps</P>
+
+<P><A NAME="HelpMenu"></A><A NAME="_Toc46"></A><B><I>Help menu</I></B></P>
+
+<UL>
+<LI><U>Manual</U>: Opens a browser to display this text</LI>
+<LI><U>Fill styles</U>, <U>Line styles</U>, <U>Symbol styles</U>:
+    Show the meaning of the codes</LI>
+<LI><U>About</U>: show the About-box</LI>
+</UL>
+
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Toolbar"></A><A NAME="_Toc47"></A><B>Toolbar</B></P>
+<P>For the function of the tool bar buttons, see the "ToolTips" that appear
+   when you position the mouse pointer on them and the description of the
+   equivalent Menu items.</P>
+<P>Two buttons change function depending whether the Data page or the 
+   Chart page of the current map is showing: the Print button
+   (print data or chart pages) and the Copy button (idem).
+   Several other buttons are disabled either with the Chart page
+   or the Data page showing.</P>
+<P><A NAME="Zoomfield"></A>The Zoom field allows to scroll to the
+   desired zoom level.
+	It is also possible to enter the zoom level directly; any level
+   from 10% to 1000% is allowed, as are f (full page view) and p
+   (print resolution)</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Examples"></A><A NAME="_Toc48"></A><B>Examples</B></P>
+<P>Several examples are provided in the MapChart\Examples subdirectory.
+   These are MapChart files (*.mct) showing the use of many parameters
+   and chart options. Before opening these files you may want to make
+   a backup, so that you can go back to the original files without
+   re-installing MapChart.</P>
+
+<P>On opening the example files, MapChart will show the chart pages.
+   Select the Data tab to see the data. In the Data sheet, you will also
+   see explanations of the use of the parameters, and suggestions to try
+   out different chart options and parameters. The following examples
+   are provided:</P>
+
+<P><I>Example1 - basic map:</I></P>
+<P>Basic map data of two linkage groups, without any formatting or QTLs.</P>
+<P><I>Example2 - formatting:</I></P>
+<P>Map with two linkage groups, showing many linkage group header and locus
+   options, including the vertical aligning of linkage groups.</P>
+<P><I>Example3 - homolog matching:</I></P>
+<P>Map showing four homologous linkage groups, with homologous loci and
+   homologous bar segments highlighted.</P>
+<P><I>Example4 - QTLs and split map:</I></P>
+<P>Map showing two linkage groups, each with several QTL intervals,
+   some overlapping. This example also shows the effect of splitting
+   up the map into segments.</P>
+<P><I>Example5 - marker highlighting and footer:</I></P>
+<P>In this map, every category of markers has its own color code.
+   By setting all color codes to black and one to red, it is easy to
+   study the distribution of the different marker categories over the genome.
+   Also shows effect of formatting code o ("omitted") for loci.</P>
+<P>Also the effect of showing page numbers in the chart title is demonstrated.</P>
+<P><I>Example6 - auto-QTLs:</I></P>
+<P>Map with two linkage groups, each with one QTL.
+   The QTLs are shown in three ways: (a) the significance of the
+   Kruskal-Wallis test at each locus is indicated by asterisks in a
+   separate text column, (b) the LOD graphs along the linkage groups
+   are shown, together with a constant line indicating the LOD threshold,
+   and (c) 1- and 2-LOD intervals are shown, calculated automatically
+   from the LOD graphs.</P>
+   <P><I>Example7 - multi-QTL and graphs:</I></P>
+<P>Here, 3 LOD graphs and 3 auto-QTL intervals are shown on the same
+   chromosome.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Problems"></A><A NAME="_Toc49"></A><B>Problems and solutions</B></P>
+
+<P><I>No map data available:</I> This error message will appear if
+   MapChart cannot find the start of the data. The data should start
+   with the heading for the first linkage group (starting with the word
+   &quot;group&quot; or &quot;chrom&quot;). If you have other text appearing
+   above the first linkage group, delete it or comment it out (place a
+   semicolon at the start of each comment line).</P>
+<P><I>Error in position of locus</I>: MapChart expects a valid number
+   after the marker name, indicating the position; the loci must be
+   listed in order of ascending position. </P>
+<P><I>Error in point … in graph…:</I> Each line in a graph file should
+   give at least two valid numbers (see <A HREF="#GraphFiles">Graph files</A>).
+   The points must be in ascending order of X (map position) values.</P>
+<P><I>Error messages stating that the charts don’t fit in the available
+   space</I>: Probably the height of the charts is larger than the space
+   between the page margins. This can be solved by increasing the available
+   page height, and by decreasing the chart height.
+   The page height can be increased by choosing a portrait instead of
+   landscape paper orientation and by setting smaller margins
+   (both through the File – Chart page setup menu option).
+   The chart height can be decreased by changing several chart options
+   (Tools - Chart options menu option or toolbar button).
+   Most effective will be choosing a smaller Locus font size,
+   increasing the number of locus names per line
+   (both on the Chart options – Loci page), and splitting linkage groups
+   into segments (&quot;Split map interval&quot; in the
+   Chart options – Bars page). Also choosing a smaller Title, Name or
+   Y-axis font may help.<BR/>
+   Finally shifting linkage group bars up or down may cause them to move
+   outside the chart area; in that case their length must be decreased,
+   or the shifting must be adjusted. The <A HREF="#Autofit">Autofit</A>
+   utility can check out many of these combinations.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><I>Changes in graph files don’t appear in the charts:</I>
+   When MapChart needs to display a chart, it first checks if there
+   are changes on the Data page or in the chart options. If not,
+   no new charts are calculated and the previously calculated
+   charts are shown again. Since changing a graph file does not change
+   the Data page, the charts will not be recalculated.
+   In this case select <A HREF="#Recalculate">Recalculate</A> from
+   the Tools menu or button bar: this causes the data and graph files
+   to be read again and new charts to be calculated. Also make sure
+   that you have saved the edited graph file before recalculating the charts!</P>
+<P><I>Charts imported into other applications are printed with very
+   thick lines</I>: When MapChart draws the charts, the width of lines
+   is as specified on the
+   <A HREF="#OptionsLineWidth">Chart options - Colors&amp;Lines</A> tab,
+   but at least one pixel of the output device. If no Windows printer is
+   installed, the screen resolution will be used, which is very coarse,
+   so even one pixel may appear quite thick. Try generating the charts
+   on a computer with a printer, and the charts will be drawn using the
+   printer resolution. The same problem occurs when the computer is running
+   in "Safe Mode": in that case no printer drivers are installed.</P>
+<P><I>Some chart elements appear distorted after importing into MS-Word or
+   MS-PowerPoint:</I> To avoid changes on importing, make sure that the
+   imported image does not have to be resized. Images exported from MapChart
+   (either by saving as *.emf file, or by copying to the clipboard) contain
+   the area <I>within</I> the margins; by a suitable combination of page
+   and margin sizes (Chart options - Page setup) the desired size can be
+   obtained. Also, exporting the *.emf file from MapChart and importing
+   (Insert Picture from file) seems to give better results than copying
+   via the Clipboard.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><I>Texts and names in charts imported into other applications are
+   not drawn at the correct size</I>: When charts are only imported
+   into word processing or presentation software there is no problem.
+   However, when the charts are edited (especially if they are
+   &quot;split into objects&quot; or &quot;ungrouped&quot;) they may
+   be converted to the internal format of the importing application.
+   At that moment, fonts may change a little in size, causing texts
+   to become somewhat wider and to overlap if they are positioned close
+   together. For example, this happens in Microsoft PowerPoint when the
+   &quot;Ungroup&quot; command is used. This is usually almost invisible
+   when charts are drawn at the printer resolution, but can be problematic
+   when drawn at screen resolution (on a computer with no printer installed).
+   It also depends on the font and font size used.
+   If the problem arises, try generating the charts on a computer
+   with an installed printer, and/or try changing fonts or font sizes.</P>
+<P><I>Charts copied to MS PowerPoint are shown very small:</I>
+   If charts are copied to MS PowerPoint through the Clipboard
+   (using the Copy Page button or Ctrl-C), they must be pasted using
+   Edit – Paste Special – Enhanced Metafile in MS PowerPoint.
+   Using the Paste button or Ctrl-V results in a very small picture.
+   Another way to import charts into MS PowerPoint is
+   Insert – Picture – From file, after using Chart export in MapChart.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+
+<P><I>Graph lines in charts imported into other applications cannot
+   be edited:</I> The dashed and dotted lines in graphs are composed of
+   short line segments. After importing a chart into another application
+   and &quot;splitting to objects&quot; or &quot;ungrouping&quot;,
+   the graph lines are not one object any more, and cannot be edited
+   as a whole. The solution is to draw with solid lines (line style L1,
+   the default value) in MapChart; solid lines remain one object after
+   imported charts are split. In the importing application the line style
+   can then be changed as desired.</P>
+<P><I>White lines and texts are invisible:</I> If you need white graphics
+   on a transparent background, <I>e.g.</I> to place them on a dark
+   background in another application, choose a dark color for the
+   background (color code C0) in the
+   <A HREF="#OptionsColors">Chart options - Colors&amp;Lines</A>
+   page dialog, and check &quot;Background transparent&quot;.
+   In MapChart you will see the charts against a dark background,
+   but the copied or exported metafiles will have a transparent background.</P>
+
+<P><A HREF="#Contents">Contents</A> <A HREF="#Index">Index</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Support"></A><A NAME="_Toc50"></A><B>Support</B></P>
+<P>Questions, problems, bug reports and suggestions for improvements and
+   additions can be sent to the author at
+   <A HREF="mailto:roeland.voorrips@wur.nl">roeland.voorrips@wur.nl</A>.
+   In case of problems, send the file(s) together with a description
+   of the problem.<BR/>
+   The most recent version can always be found on the MapChart pages at
+   <A HREF="https://www.wur.nl/en/show/Mapchart.htm">https://www.wur.nl/en/show/Mapchart.htm</A>.</P>
+
+<P><A HREF="#Contents">Contents</A></P>
+<P>&nbsp;</P>
+
+<P><A NAME="Index"></A><A NAME="_Toc51"></A><B>Index</B></P>
+<P>
+<A HREF="#AddColorRange">Add color range</A><BR/>
+<A HREF="#AlignHoriz">Align linkage groups side by side</A><BR/>
+<A HREF="#AlignVertically">Align linkage groups vertically</A><BR/>
+<A HREF="#QTLsAuto">Auto QTLs</A><BR/>
+<A HREF="#Autofit">Autofit</A><BR/>
+<A HREF="#OptionsBars">Bar options</A><BR/>
+<A HREF="#SegmentsSection">Bar segments data format</A><BR/>
+<A HREF="#OptionsLineWidth">Bold (wide) lines</A><BR/>
+<A HREF="#ChartFiles">Chart files</A><BR/>
+<A HREF="#ChartOptions">Chart options</A><BR/>
+<A HREF="#DataChartSheet">Chart page</A><BR/>
+<A HREF="#OptionsTitleFooter">Chart title</A><BR/>
+<A HREF="#LinkGrpsChrom">Chromosomes and linkage groups</A><BR/>
+<A HREF="#HowToRefer">Citation</A><BR/>
+<A HREF="#OptionsColors">Color codes, defining</A><BR/>
+<A HREF="#UpgradeColor">Color codes, Upgrade issue</A><BR/>
+<A HREF="#CombineMaps">Combine maps</A><BR/>
+<A HREF="#CommentLines">Comment lines command</A><BR/>
+<A HREF="#CombineMaps">Compare maps</A><BR/>
+<A HREF="#Homologs">Connections between homologous loci</A><BR/>
+<A HREF="#CursorKeys">Cursor keys</A> <BR/>
+<A HREF="#DataFont">Data font</A><BR/>
+<A HREF="#DataFormat">Data format</A><BR/>
+<A HREF="#DataChartSheet">Data page</A><BR/>
+<A HREF="#DefaultChartOptions">Default Chart options</A><BR/>
+<A HREF="#DefaultDir">Default directory</A><BR/>
+<A HREF="#UpgradeDefDir">Default directory, Upgrade issue</A><BR/>
+<A HREF="#MarkerDistribAnalysis">Distribution of marker categories</A><BR/>
+<A HREF="#ChartFiles">Emf files</A><BR/>
+<A HREF="#_Toc48">Examples</A><BR/>
+<A HREF="#ChartFiles">Exporting charts</A><BR/>
+<A HREF="#_Toc11">FAQ (Frequently Asked Questions)</A><BR/>
+Fill styles: select Help – Fill styles<BR/>
+<A HREF="#OptionsTitleFooter">Footer</A><BR/>
+<A HREF="#DataFormat">Format, data</A><BR/>
+<A HREF="#GraphFiles">Format, graph files</A><BR/>
+<A HREF="#GraphsData">Graphs data format</A><BR/>
+<A HREF="#OptionsGraphs">Graphs - options</A><BR/>
+<A HREF="#LegendOptions">Graphs - legend options</A><BR/>
+<A HREF="#YaxisFormatting">Graphs - Y-axis data format</A><BR/>
+<A HREF="#OptionsGraphs">Graphs - Y-axis options</A><BR/>
+<A HREF="#Homologs">Homologous loci - Highlighting</A><BR/>
+<A HREF="#IndicatorsHighlight">Indicators - Highlighting and size</A><BR/>
+<A HREF="#MenuStructure">Keyboard commands</A><BR/>
+<A HREF="#LegendOptions">Legend options</A><BR/>
+<A HREF="#LicenceFile">License</A><BR/>
+Line styles: select Help – Line styles<BR/>
+<A HREF="#OptionsLineWidth">Line width</A><BR/>
+<A HREF="#LinkageGroupHeader">Linkage group - data format</A><BR/>
+<A HREF="#OptionsBars">Linkage group - bar options</A><BR/>
+<A HREF="#SegmentsSection">Linkage group - bar segments data format</A><BR/>
+<A HREF="#TitleOptions">Linkage group - name options</A><BR/>
+<A HREF="#AlignHoriz">Linkage groups - align horizontally</A><BR/>
+<A HREF="#AlignVertically">Linkage groups - align vertically</A><BR/>
+<A HREF="#LinkGrpsChrom">Linkage groups and Chromosomes</A><BR/>
+<A HREF="#LociSection">Loci – data format</A><BR/>
+<A HREF="#OptionsLoci">Loci - options</A><BR/>
+<A HREF="#LocusText">Locus texts</A><BR/>
+<A HREF="#MarkerDistribAnalysis">Map analysis</A><BR/>
+<A HREF="#HowToRefer">MapChart reference</A><BR/>
+<A HREF="#ExportMapFile">MapQTL – export Map file to</A><BR/>
+<A HREF="#MapQTLgraphFiles">MapQTL – read Graph files from</A><BR/>
+<A HREF="#OptionsPageSize">Margins</A><BR/>
+<A HREF="#GraphsFormatting">Marker (Graph symbol) </A><BR/>
+Markers: see Loci<BR/>
+<A HREF="#MarkerDistribAnalysis">Marker categories</A><BR/>
+<A HREF="#MenuStructure">Menu structure</A><BR/>
+<A HREF="#ChartOptions">Options - chart</A><BR/>
+<A HREF="#OptionsPageSize">Page setup</A><BR/>
+<A HREF="#PrintCharts">Print charts</A><BR/>
+<A HREF="#PrintData">Print data</A><BR/>
+<A HREF="#QTLsAuto">QTLs - auto</A><BR/>
+<A HREF="#QTLsSection">QTLs - data format</A><BR/>
+<A HREF="#OptionsQTLs">QTLs - options</A><BR/>
+<A HREF="#Recalculate">Recalculate</A><BR/>
+<A HREF="#HowToRefer">Referring to MapChart</A><BR/>
+<A HREF="#PrintCharts">Resolution</A><BR/>
+<A HREF="#SegmentsSection">Segments data format</A><BR/>
+<A HREF="#SplitMap">Split map</A><BR/>
+Symbol styles: select Help – Symbol styles<BR/>
+<A HREF="#LocusText">Text columns</A><BR/>
+<A HREF="#OptionsTitleFooter">Title</A><BR/>
+<A HREF="#UncommentLines">Uncomment lines command</A><BR/>
+<A HREF="#Update">Update</A><BR/>
+<A HREF="#UpgradeIssues">Upgrade issues</A><BR/>
+<A HREF="#Support">Website</A><BR/>
+<A HREF="#OptionsLineWidth">Wide (bold) lines</A><BR/>
+<A HREF="#YaxisFormatting">Y-axis of graphs - data format</A><BR/>
+<A HREF="#OptionsGraphs">Y-axis of graphs - options</A><BR/>
+<A HREF="#Zoomfield">Zoom field - button bar</A></P>
+
+<P>&nbsp;</P>
+<P><A HREF="#Contents">Contents</A><B> </B><A HREF="#Index">Index</A></P>
+
+</FONT>
+</BODY>
+</HTML>

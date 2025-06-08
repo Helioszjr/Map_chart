@@ -1,0 +1,200 @@
+; MapChart example 4 - QTLs and split map
+
+; This example shows how to specify QTL intervals. These are normally
+; composed of an inner (e.g. 1-LOD) and an outer (2-LOD) interval. The
+; inner interval is shown as a rectangle, the outer interval as line
+; segments. The fill style of the inner, and the line style of the
+; outer interval can be specified for each QTL.
+
+; On the Chart options - QTLs page a choice can be made to show
+; QTL intervals at the left or right side of the bar, and to show
+; or hide the terminal dashes. 
+
+; Also the effect of splitting the linkage groups every 50 cM is shown;
+; this is set in the Chart options - Bars page.
+
+group A
+3NE11a    0.0
+2NC10a    2.0
+1NE1d    22.1
+2NF2a    29.1
+2NF2b    30.9
+A09      47.9
+2NA8c    50.3
+3ND7     61.0
+3NF4     74.2
+A08      94.2
+4ND3    105.2
+
+qtls ;start of qtls section of linkage group A
+Ca-14 1.3 7.9 12.3 18.6
+      ;first QTL: name Ca-14
+      ;           start of outer (1.3) and inner (7.9) intervals, 
+      ;           end of inner (12.3) and outer (18.6) intervals,
+      ;           no formatting, displayed with default color (C1), 
+      ;           default fill and line style (solid) and default font style
+
+pb-4 25.5 30.9 57.3 59.5  BI C2 L3
+     ;second QTL: name and intervals specified as above
+     ;            font attributes bold and italic (BI) changed from default settings
+     ;            color code 2 (C2) for name and bars
+     ;            fill style of bar not specified, solid by default
+     ;            line style of outer interval L3 (dotted)
+     ;            (dotted lines are sometimes unclear at lower zoom levels, but
+     ;            is always visible on the printed page and highest zoom level)
+     ;this QTL interval overlaps the split of the linkage group at 50 cM  
+     
+vg-1 73.0 73.0 85.0 85.0  C3 F4
+     ;third QTL: only inner interval shown, since it overlaps outer interval (73.0 - 85.0)
+     ;           color number 3 (C3),
+     ;           fill style F4 (diagonal hatch)
+     ;the first, second and third QTLs don't overlap each other and are shown in the same 
+     ;"QTL band" (in the same vertical line)
+
+fs-3 80.3 90.0 90.0 100.0 
+     ;fourth qtl: inner interval has length 0, its position is indicated by a 
+     ;            horizontal line (this may not be visible at lower zoom level
+     ;            but is always visible on the printed page and highest zoom level)
+     ;the fourth QTL overlaps the third and is therefore shown in a second "QTL band"
+     ;further from the chromosome bar.  
+
+group B P
+; Linkage group B starts on the next page (P)
+TG608    0
+TG189    2
+CT63B   21
+TG1B    33
+TG234   41
+TG14    51
+CT24   124
+
+QTLs 
+DX 35.3 40.2 61.1 66.0  C4      ; color code 4
+Ac-2 5.0 14.3 23.7 31.4  C3 F7  ; color code 3, fill style 7
+; Ac-2 does not overlap DX, so both QTLs could be shown in the same "QTL band",
+; but because the start of Ac-2 is lower than the end of DX, Ac-2 is
+; placed in a second QTL band further from the chromosome bar.
+; If Ac-2 were specified before DX, the two QTLs would be shown in the same QTL band.
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=1
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=2500
+RightMargin=2500
+TopMargin=2500
+BottomMargin=2500
+
+[Title&Footer]
+ChartTitle=Example 4
+TitleMethod=0
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=0
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=B
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=1
+BarTops=0
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=50
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=3
+PositionTicks=10
+LocusNamePosition=0
+LociPerLine=2
+ShowTexts=1
+TextStyle=0
+Decimals=0
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=1
+YaxisLength=5000
+YaxisMMperUnit=2.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=200
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=10
+16777215
+0
+255
+32768
+8388608
+65535
+16711935
+65280
+128
+16776960
+32896

@@ -1,0 +1,257 @@
+; MapChart example 3 - homolog matching
+
+; This example shows more linkage group and locus options.
+
+; Hom(e)ologous loci on different linkage groups and different maps are shown 
+; with the same color and are connected with lines. Homologs are recognized
+; based on similarity of names (see Chart options - Homol-1 - Compare loci).
+; Homologous loci with different names have been given the same "homolog number"
+; so they are still recognized as homologs. 
+
+; Also a hom(e)ologous common bar segment is marked.
+
+; The linkage groups are shifted up or down to align the hom(e)ologous parts.
+
+; Further, a non-transparent background is used,
+; and a cM ruler is shown at the left side of the page instead of locus positions
+; along the linkage group bars (Chart options - Loci - Positions)
+
+; The title and footer are specified on the Chart options - Title&Footer page.
+
+; Try out different ways of highlighting the homologous loci (Chart options -
+; Homol-1 - Highlight loci) and different styles of the connections 
+; (Chart options - Homol-2 - Connection style).
+
+
+group L1 R 
+; R: linkage group reversed ("upside-down") for comparison with others	
+3NE4a	0
+4NF12a	13
+4ND9	18
+3ND6b	23
+4NF2c	24
+3ND6d	27
+1NF2c	35
+4NF4d	48
+4NF5a  48
+3NE11	59
+4ND2	65
+3NE1	71
+4NC5	77
+4NE10b	88
+3NC1	93
+1NE7	100
+3NB7	111 
+4NE8	116
+3NH2	121
+4NF4a	127
+4NF5b  127
+4NF4c	134
+4NA1b	142
+4NB7	150
+3NC3   155  h1 ;homology with 3NC3a/b not recognized automatically
+pGS43	177
+2NB8	193  h2 ;homology with 2NB8a not recognized automatically
+3ND10	193
+3NB3	205  
+2NH8	208
+4NE11	214  h3 ;homology with 4NE11a not recognized automatically
+1NE1a	227  
+segments
+227 214  C9 ; bar segment highlights the homologous region
+
+chrom V3 v=4 m
+; v=4: bar shifted down 4 mm to align homologous part with group L1
+; m: "mirror image": reverse position of locus names and positions
+;    to the other side of the bar
+1NE1a     0.0  h4 ;homology with 1NE1c not recognized automatically
+3ND12     0.0   
+3NC6c     3.5  h5 ;homology with 3NC6 not recognized automatically
+2NA3a     4.7  h6 ;homology with 3NA3b not recognized automatically
+4NE11a   10.7  h3 ;homology with 4NE11 not recognized automatically
+3NB3     13.8  
+2NB8a    25.6  h2 ;homology with 2NB8 not recognized automatically
+3NC3c    47.6  h1 ;homology with 3NC3 not recognized automatically
+3NC3a    51.8  h1 ;homology with 3NC3 not recognized automatically
+A04      67.7
+A05      67.7
+1NG1b   100.9
+segments
+0.0 10.7  C9 
+
+chrom V5 v=-4
+; v=-4: shift 4 mm upwards
+1NE1c     0.0  h4 ;homology with 1NE1a not recognized automatically
+3ND12     0.0  
+A13       7.4
+A14       7.4
+3NC6b    17.1  h5 ;homology with 3NC6 not recognized automatically
+2NA3b    24.1  h6 ;homology with 3NA3a not recognized automatically
+4NE11b   40.7  h3
+4NE11d   44.1  h3
+2NA8d    55.0
+1NG9     57.1  
+2NA8a    57.1
+3NB4b    57.1
+A26      60.8
+segments
+0.0 42  C9 
+
+chrom L3 v=-16 m
+2NF2	0
+LMOR	21
+3ND12	23  
+4NG6	33
+3NH5	38
+3NC6	49  h5 ;homology with 3NC6b not recognized automatically
+2NA3b	53  
+2NG5a	73
+1NH12	76
+1NG9	79 
+ 
+2NC7b	79
+2NC12	85
+1NG9	85  
+3ND8	85
+2NE10	85
+2NC7a	85
+4NE5	98
+3NF5b	116
+1NB5	132
+1NG1	140 
+segments
+23 68  C9
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=0
+PageOrientation=1
+CustomWidth=21000
+CustomHeight=29700
+LeftMargin=1500
+RightMargin=1500
+TopMargin=1200
+BottomMargin=1200
+
+[Title&Footer]
+ChartTitle=Example 3
+TitleMethod=1
+TitleFontName=Arial
+TitleFontSize=14
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=124
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=12
+NamesFontStyle=B
+NamesBottom=200
+MultipleBars=1
+ChromSpacing=1500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=1
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=B
+HilightSize=0
+HilightFontSize=10
+HilightColor=1
+HilightColorMethod=1
+HilightColorNum=2
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=1
+ConnSelfWidth=1000
+ConnDotSize=50
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=1
+
+[Bars]
+BarPosAligned=0
+BarCentered=1
+BarTops=0
+FixedScale=0
+MaxBarLength=11000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=4
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=1
+ShowTexts=1
+TextStyle=0
+Decimals=0
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=1
+YaxisLength=5000
+YaxisMMperUnit=2.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=200
+ShowLegend=1
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=0
+MaxColor=21
+9225983
+0
+255
+32768
+8388608
+65535
+16711935
+8421376
+128
+16776960
+32896
+33023
+16711680
+16744448
+8453888
+16711808
+16744703
+8421631
+8454143
+16512
+4612991
+4612991

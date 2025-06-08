@@ -1,0 +1,161 @@
+; MapChart example 7 - multiple QTLs and graphs
+
+; This example shows how to plot multiple auto-QTLs and multiple
+; LOD graphs for the same linkage group.
+
+; The graph data for the 3 traits are read from the 3 files
+; Ex7Trait_A.txt, Ex7Trait_B.txt and Ex7Trait_C.txt. These
+; files were exported from MapQTL (version 6).
+
+; By using the same colors for the QTL bars and the LOD graphs
+; we avoid the need for a separate legend.
+
+group P06 
+P14M48-323              0.000  ;  200
+E32M49-406             19.760  ;   12
+E32M49-520             48.857  ;   16
+E35M58-446             53.603  ;   58
+E35M58-280             61.118  ;   54
+HmpsE113               71.162  ;  301
+Hpms1_5           77.650  ;  124
+Epms_376               79.864  ;  308
+HpmsE078           108.106  ;  153
+HpmsAT2-20            123.678  ;  300
+P17M32-227            129.090  ;  236
+P11M48-159            148.353  ;  166
+HpmsE088           167.988  ;  154
+HpmsE014           180.991  ;  140
+E35M49-332            197.352  ;   48
+
+graphs
+const 3.6
+Trait_A Ex7Trait_A.txt S1 L1 c2
+Trait_B Ex7Trait_B.txt S1 L1 c3
+Trait_C Ex7Trait_C.txt S1 L1 c4
+qtls
+Trait_A auto 1 2 c2
+Trait_B auto 1 2 c3
+Trait_C auto 1 2 c4
+
+[Chart Options]
+Version=22
+
+[Page Setup]
+PageSize=3
+PageOrientation=1
+CustomWidth=14000
+CustomHeight=22500
+LeftMargin=0
+RightMargin=0
+TopMargin=0
+BottomMargin=0
+
+[Title&Footer]
+ChartTitle=
+TitleMethod=1
+TitleFontName=Arial
+TitleFontSize=16
+TitleFontStyle=B
+TitleBottom=500
+FooterMethod=0
+FooterFontName=Arial
+FooterFontSize=8
+FooterFontStyle=B
+[Page layout]
+NamesFontName=Arial
+NamesFontSize=14
+NamesFontStyle=B
+NamesBottom=500
+MultipleBars=1
+ChromSpacing=500
+ChromWidthMethod=0
+FixChromWidth=7000
+
+[Homologs]
+ShowHomologs=0
+HomAuto=1
+HomUse=0
+HomFirst=0
+HomCharNum=0
+HomIgnCase=0
+HilightStyle=0
+HilightFontStyle=
+HilightSize=0
+HilightFontSize=10
+HilightColor=0
+HilightColorMethod=0
+HilightColorNum=1
+ConnMethod=1
+ConnSelf=0
+ConnSelfRight=0
+ConnSelfWidth=400
+ConnDotSize=150
+ConnColor=1
+ConnLineStyle=1
+ConnLineBold=0
+ConnColorMethod=0
+
+[Bars]
+BarPosAligned=0
+BarCentered=0
+BarTops=500
+FixedScale=0
+MaxBarLength=12000
+MM100perCM=100
+VertShiftUnits=0
+BarWidth=300
+IndBold=1
+IndCol=1
+IndicatorWidth=350
+RoundTips=1
+SplitMapCM=0
+
+[Loci]
+LocusFontName=Arial
+LocusFontSize=10
+LocusFontStyle=
+PositionMethod=1
+PositionTicks=20
+LocusNamePosition=1
+LociPerLine=2
+ShowTexts=1
+TextStyle=0
+Decimals=1
+
+[QTLs&Graphs]
+QTLFontName=Arial
+QTLFontSize=10
+QTLFontStyle=
+QTLBarWidth=300
+QTLSupName=0
+QTLEnds=1
+QTLPosition=1
+YaxisFontName=Arial
+YaxisFontSize=8
+YaxisFontStyle=
+YaxisFixedLength=0
+YaxisLength=5000
+YaxisMMperUnit=3.00000000000E+0002
+RoundGraphPoints=1
+SymbolSize=150
+ShowLegend=0
+LegendFontName=Arial
+LegendFontSize=10
+LegendFontStyle=
+
+[Colors&Lines]
+LineWidth=20
+BoldLineWidth=50
+Transparent=1
+MaxColor=10
+16777215
+0
+255
+32768
+8388608
+65535
+16711935
+65280
+128
+16776960
+32896

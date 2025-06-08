@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Author" CONTENT="Roeland E. Voorrips">
+<TITLE>MapChart release history</TITLE>
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<P><FONT FACE="Arial" SIZE=6>MapChart release history</FONT></P>
+<P><FONT FACE="Arial" SIZE=4>R.E. Voorrips</FONT></P>
+<FONT FACE="Arial" SIZE=2>
+
+<P><A HREF="MCManual.htm">Back to Manual</A></P>
+
+<P>MapChart 2.32: November 2017</P>
+<P>Since about 2015 MapChart would fail to create a window on some systems. This occurred
+   on Windows 7, 8 and 10. Sometimes the problem would appear or disappear after a Windows
+   update. With version 2.32 the problem is solved.</P>
+
+<P>MapChart 2.3: January 2015</P>
+
+<UL>
+<LI>New installer, works on all with Windows 7 and 8 systems as well as older ones</LI>
+<LI>Added more zoom levels and manual adjusting of zoom level</LI>
+<LI>Added option to suppress QTL names</LI>
+<LI>Rewritten parsing of MapQTL 5.0 and 6.0 output files (the old version did not work
+    for all population types)</LI>
+<LI>Corrected: occasional incorrect lines connecting homologs</LI>
+<LI>Corrected: sometimes &quot;omitted&quot; loci were considered as homologs</LI>
+<LI>corrected: chart title could not be removed</LI>
+</UL>
+
+<P>MapChart 2.2: April 2006</P>
+
+<UL>
+<LI>Reads MapQTL 5.0 output files</LI>
+<LI>Graph files can contain data for multiple linkage groups (less clutter of data files)</LI>
+<LI>New formatting &quot;Omit&quot; for markers: allows to create skeleton maps showing a few markers with name and only ticks at the positions of all &quot;omitted&quot; markers</LI>
+<LI>Exports charts as bitmaps as well as metafiles</LI>
+<LI>Data font can be set and is retained between sessions</LI>
+<LI>Removed limitation to size of data</LI>
+<LI>Improved printing control (color / grayscale, resolution)
+<li>Autofit improved</UL>
+
+
+<P>MapChart 2.11: June 2003</P>
+<P>This version corrects a few minor errors in version 2.1 and is otherwise unchanged.</P>
+
+<P>MapChart 2.1: June 2002</P>
+
+<UL>
+<LI>Homologous loci can be highlighted and/or connected with lines</LI>
+<LI>"Combine Maps" tool: puts the corresponding linkage groups from several files side by side, especially useful for showing homologies between maps</LI>
+<LI>Linkage groups that are parts of the same chromosome can be automatically aligned under each other</LI>
+<LI>Chart title on the first page or on all pages</LI>
+<LI>Footer with page number, file name and/or date</LI>
+<LI>Extra option to indicate locus positions: ruler at left side of page, as alternative to locus positions, intervals or ticks along the linkage group bars</LI>
+<LI>Up to three text columns next to the locus names can be used, instead of only one</LI>
+<LI>Texts can be shown with or without specific formatting of locus name</LI>
+<LI>Constant graph lines (e.g. LOD thresholds) can now be specified directly, instead of being read from a file</LI>
+<LI>Graphs can be shown with bold lines</LI>
+<LI>More QTL interval options: line style, bold lines, with or without cross-dash at ends</LI>
+<LI>Normal and bold line width can be specified</LI>
+<LI>Indicators connecting highlighted locus names with their positions on the linkage group bar can be highlighted bold and/or in color</LI>
+<LI>Vertical shift distance can now be expressed either in mm or in map units</LI>
+<LI>Map files containing ";" (the comment character) as part of the locus or linkage group names are now read like in JoinMap and MapQTL</LI>
+<LI>Dashed and dotted lines were drawn incorrectly on some printers; corrected</LI>
+<LI>Occasionally loci appearing on the left side of the bar were not shown; corrected</LI>
+<LI>Several minor bug fixes</LI>
+</UL>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>Already available in version 2.0 of 14 May 2001:</I></P>
+
+<UL>
+<LI>Map datafiles can be exported for use in <I>e.g.</I> MapQTL</LI>
+<LI>Locus names can be suppressed. If also positions are suppressed the
+    linkage group bar only shows lines at the locus positions.</LI>
+<LI>Graph files can now have multiple data columns.
+    A graph option selects which column to use; &quot;LOD&quot; is the default.
+	MapQTL 3.0 and 4.0 output can be read without editing.</LI>
+</UL>
+
+<P>MapChart 2.0: 20 February 2001</P>
+
+<UL>
+<LI>Change to the copyright:<BR>
+    The copyright of MapChart now belongs to Plant Research International,
+	Wageningen, The Netherlands</LI>
+
+<LI>Changes to interface:</LI>
+
+<UL>
+<LI>Multiple document interface: multiple maps can be open simultaneously.
+    Useful for comparisons and for updating information from one map to
+	another (see below)</LI>
+<LI>Both the map data and the chart options are now stored in one file
+    (*.mct) instead of in separate *.map and *.set files.
+	Useful because *.map files with different formats are also used for
+	other purposes (e.g. for MapQTL input).</LI>
+<LI>MapChart files (*.mct) are registered: double-clicking on a *.mct file
+    in the Explorer will cause MapChart to open the file</LI>
+<LI>On opening a file, the chart is displayed instead of the data</LI>
+<LI>On zooming in or out, the image now remains centered on the same spot.</LI>
+<LI>Changed layout of some forms to improve legibility with different
+    Windows screen font sizes</LI>
+<LI>Right-click (pop-up) menu’s</LI>
+<LI>MapChart will start maximized if it was closed in a maximized state
+    in the previous session</LI>
+<LI>The font of the Data sheet can be specified</LI>
+<LI>When errors in the data are found, the cursor is placed on the
+    erroneous line</LI>
+<LI>When errors in the Chart options dialog are found, the error is
+    highlighted</LI>
+<LI>The <A HREF="MCManual.htm">manual</A> is now a HTML file with contents,
+    index and links</LI>
+</UL>
+
+<LI>New functionality:</LI>
+
+<UL>
+<LI>All kinds of formatting information (formatting of linkage groups and loci;
+    QTLs, graphs, bar segments, chart options, page setup) can be copied from
+	one map to another. Useful for transferring this information to a new
+	version of the map.</LI>
+<LI>&quot;Autofit&quot; added: if the charts don’t fit on the page size
+    with the current chart options, MapChart now attempts to fit the charts
+	by changing several combinations of chart options.</LI>
+<LI>Unlimited numbers of color codes can now be used (a consequence is
+    that the color coding is slightly modified, but map files of
+	version 1.x are automatically converted)</LI>
+<LI>With a transparent background, now a background color is shown on screen,
+    so that white lines, texts and symbols are visible.</LI>
+<LI>Bars of linkage groups can now be aligned vertically (to show two parts
+    belonging to the same chromosome)</LI>
+<LI>Positions along the linkage group bars can now be indicated in four ways:
+    no positions, absolute positions of loci, intervals between loci, or
+	ticks at fixed intervals</LI>
+<LI>The font size of individual loci can now be specified</LI>
+<LI>The Y-axis of graphs can now be formatted: low and high limits,
+    tick interval, number of decimals; if not specified they are
+	automatically determined as before</LI>
+<LI>Improved drawing of dashed and dotted lines in Graphs</LI>
+<LI>The size of symbols in graphs can now be specified</LI>
+<LI>Linkage group bars can now be shown with either flat or rounded tips.</LI>
+<LI>Bugs in Mirror and Reverse options of linkage groups fixed</LI>
+<LI>Several other minor bugs solved. </LI>
+</UL>
+</UL>
+
+<P><A HREF="MCManual.htm">Back to Manual</A></P>
+<P>&nbsp;</P>
+
+<P>MapChart 1.44: 12 January 2001</P>
+
+<UL>
+<LI>Problems with some printer drivers solved. </LI>
+</UL>
+
+<P>MapChart 1.43: 30 March 2000</P>
+
+<UL>
+<LI>Multiple instances of MapChart can now run simultaneously
+    (useful to compare different maps)</LI>
+<LI>Bug in Y-axis numbers in graphs corrected</LI>
+</UL>
+
+<P>MapChart 1.42: 29 February 2000</P>
+
+<UL>
+<LI>Bug in rounding positions corrected</LI>
+<LI>Positions (cM) of points in graph now by default rounded like
+    locus positions; rounding can be disabled (Settings-Graphs)</LI>
+<LI>Find and Replace now start at current position instead of at start of text</LI>
+</UL>
+
+<P>MapChart 1.41: 14 February 2000</P>
+
+<UL>
+<LI>Chart files are not automatically saved any more, but only if requested
+   ("Save chart pages" button in chart window toolbar), to prevent
+   accumulation of unneeded files</LI>
+<LI>New print dialog allows to select printer and to set number of copies</LI>
+<LI>Map data and manual can now be printed from MapChart </LI>
+</UL>
+
+<P>MapChart 1.40: 12 January 2000</P>
+
+<UL>
+<LI>Mirror option in chromosome header added: switch locus names and
+    QTL bars from left to right or v.v. for individual chromosomes</LI>
+<LI>Locus texts added: optional extra texts for each locus displayed
+    in a separate column </LI>
+<LI>MapChart now reads numbers with decimal points or decimal comma's,
+    irrespective of Windows regional settings</LI>
+<LI>Open file dialog now remembers last working folder from previous
+    MapChart run</LI>
+<LI>Command-line option D=&lt;folder&gt; to specify where Open file and
+    Save file dialogs start if the previous working folder is no longer
+	accessible</LI>
+<LI>Default settings now saved in user-specified file.</LI>
+<LI>Various other small improvements and bug fixes</LI>
+</UL>
+
+<P>MapChart 1.30: 15 December 1999</P>
+
+<UL>
+<LI>Graphs (LOD graphs of QTLs or otherwise), graph legend and Line styles
+    and Symbol styles Help forms added</LI>
+<LI>Auto QTLs (QTL bars calculated from graphs) added</LI>
+<LI>New separate font dialog simplifies many Settings dialog pages</LI>
+<LI>Bug in detection of arrow keys solved</LI>
+</UL>
+
+<P>MapChart 1.22: 22 November 1999</P>
+
+<UL>
+<LI>Bug in Colors page of Settings Dialog corrected</LI>
+</UL>
+
+<P>MapChart 1.21: 10 November 1999</P>
+
+<UL>
+<LI>Edit commands added: Find and Replace</LI>
+<LI>Keyboard actions added as alternative for mouse actions, a.o.
+    Esc for closing windows, (Ctrl-) Arrows, (Ctrl-) PgUp/PgDn,
+	(Ctrl-) Home/End for moving around and between chart pages,
+	+/- for zooming in/out.</LI>
+<LI>Copy chart page to Clipboard (with button or Ctrl-C) added</LI>
+</UL>
+
+<P>MapChart 1.2: 24 October 1999</P>
+
+<UL>
+<LI>Locus positions can be shown as absolute positions or intervals,
+    or can be suppressed (previously only absolute positions were shown)</LI>
+<LI>Placing of loci along chromosome bar improved</LI>
+<LI>Extended formatting of chromosomes: shifting up, down, left or right,
+    reverse chromosome, force page break</LI>
+<LI>Changed format of chromosome header to accommodate new options </LI>
+<LI>Segments of chromosome bars can be filled and colored</LI>
+</UL>
+
+<P>MapChart 1.1: 27 September 1999</P>
+
+<UL>
+<LI>QTL bars added</LI>
+<LI>Minor improvements in drawing</LI>
+<LI>Fill styles for chromosome and QTL bars, and Fill styles Help form added</LI>
+</UL>
+
+<P>MapChart 1.0: 24 August 1999</P>
+
+<UL>
+<LI>Printer support</LI>
+<LI>Drawing at printer resolution</LI>
+<LI>Zooming in and out</LI>
+<LI>Locus names either left or right of bar (was: only on the right)</LI>
+<LI>Settings dialog redesigned</LI>
+<LI>Toolbars on data and chart windows</LI>
+<LI>Editing commands added: Comment and Uncomment lines</LI>
+<LI>Manual available as online help</LI>
+</UL>
+
+<P>MapChart 0.1: 7 April 1999</P>
+<P>First released version</P>
+
+<UL>
+<LI>Charts with chromosome titles and loci</LI>
+<LI>Charts drawn at screen resolution</LI>
+</UL>
+
+<P><A HREF="MCManual.htm">Back to Manual></A></P>
+
+</FONT>
+</BODY>
+</HTML>
